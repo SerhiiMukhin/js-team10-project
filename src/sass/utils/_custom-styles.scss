@@ -1,0 +1,22 @@
+body {
+  min-height: 100vh;
+  
+  font-family: $primary-font-family;
+  font-weight: $primary-font-weight;
+  
+  background-color: $primary-bgc;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+

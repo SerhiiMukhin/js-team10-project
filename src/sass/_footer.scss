@@ -1,1 +1,23 @@
 // Стилі для футера
+.footer {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 29px;
+  padding-bottom: 39px;
+  max-width: 320px;
+  
+  //   $button-bgc-and-footer
+  background-color: #f7f7f7;
+
+  &__content {
+    text-align: center;
+  }
+
+  &__text {
+    // $secondary-font-weight
+    font-weight: 400;
+    // $secondary-font-size
+    font-size: 14px;
+    line-height: 114.285714%; /* 16px/14px */
+  }
+}

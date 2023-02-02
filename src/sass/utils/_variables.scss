@@ -1,0 +1,25 @@
+// window size
+$mobile: 320px;
+$tablet: 768px;
+$desctop: 1280px;
+
+// fonts
+$primary-font-family: "Roboto", sans-serif;
+$primary-font-weight: 500;
+$secondary-font-weight: 400;
+$primary-font-size: 12px;
+$secondary-font-size: 14px;
+
+// colors
+$primary-bgc: #ffffff;
+$primary-text-color: #000000;
+$header-bgc: rgba(0, 0, 0, 0.56);
+$button-bgc-and-footer: #F7F7F7;
+$current-link-under-line-color: #FF001B;
+$accent-color: #FF6B01;
+$footer-text: #545454;
+$modal-text: #8C8C8C;
+
+// animations
+$time-duration: 250ms;
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
