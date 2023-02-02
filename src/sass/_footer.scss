@@ -4,20 +4,62 @@
   margin-right: auto;
   padding-top: 29px;
   padding-bottom: 39px;
-  max-width: 320px;
 
-  //   $button-bgc-and-footer
   background-color: #f7f7f7;
 
-  &__content {
-    text-align: center;
+  @media screen and (min-width: 768px) {
+    padding: 30px;
   }
 
-  &__text {
-    // $secondary-font-weight
+  &__content {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
     font-weight: 400;
-    // $secondary-font-size
     font-size: 14px;
     line-height: 114.285714%; /* 16px/14px */
+
+    @media screen and (max-width: 767px) {
+      max-width: 320px;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: center;
+
+      font-size: 16px;
+      line-height: 118.75%; /* 19px/16px */
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      max-width: 768px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      max-width: 1280px;
+    }
   }
+}
+.develop {
+  @media screen and (min-width: 768px) {
+    margin-left: 5px;
+  }
+}
+.copyright {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+
+  color: #545454;
+}
+.modal-students {
+  color: #545454;
+
+  &__link {
+    text-decoration: underline;
+  }
+}
+.footer-icon {
+  margin: 0 5px;
 }
