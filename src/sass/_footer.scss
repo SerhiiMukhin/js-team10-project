@@ -7,7 +7,7 @@
 
   background-color: #f7f7f7;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding: 30px;
   }
 
@@ -17,14 +17,14 @@
 
     text-align: center;
     font-weight: 400;
-    font-size: 14px;
+    font-size: $secondary-font-size;
     line-height: 114.285714%; /* 16px/14px */
 
     @media screen and (max-width: 767px) {
-      max-width: 320px;
+      max-width: $mobile;
     }
-
-    @media screen and (min-width: 768px) {
+    
+    @media screen and (min-width: $tablet) {
       display: flex;
       justify-content: center;
 
@@ -32,17 +32,17 @@
       line-height: 118.75%; /* 19px/16px */
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
-      max-width: 768px;
+    @media screen and (min-width: $tablet) and (max-width: 1279px) {
+      max-width: $tablet;
     }
 
-    @media screen and (min-width: 1280px) {
-      max-width: 1280px;
+    @media screen and (min-width: $desctop) {
+      max-width: $desctop;
     }
   }
 }
 .develop {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     margin-left: 5px;
   }
 }
