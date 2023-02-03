@@ -1,1 +1,1 @@
-import './js/spiner'
+import './js/spiner';

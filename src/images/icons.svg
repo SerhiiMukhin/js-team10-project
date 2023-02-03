@@ -35,5 +35,8 @@
             <path stroke-width="2.1333" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter"
                 d="M8.533 8.533l14.933 14.933M8.533 23.467l14.933-14.933"></path>
         </symbol>
+        <symbol id="icon-vector" viewBox="0 0 32 32">
+      <path d="M32 3.223 28.777 0 16 12.777 3.223 0 0 3.223 12.777 16 0 28.777 3.223 32 16 19.223 28.777 32 32 28.777 19.223 16 32 3.223z"/>
+    </symbol>
     </defs>
 </svg>
