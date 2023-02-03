@@ -21,7 +21,7 @@ async function onSearch(evt) {
     }
 
     const { page, results, total_pages, total_results } =
-      await searchMovieApi.getMovieByName(); // сюда меняем на свой метод класса getPopularFilms()/getInfoByMovieId() и деструктуризируем необходимые данные из респонса
+      await searchMovieApi.getMovieByName(); // здесь меняем на свой метод класса getPopularFilms()/getInfoByMovieId() и деструктуризируем необходимые данные из респонса
     if (total_results === 0) {
       resetMarkup();
       console.log('Введите нормальный запрос!');
