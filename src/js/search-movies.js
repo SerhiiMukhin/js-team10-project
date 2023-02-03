@@ -1,15 +1,9 @@
-import SearchMovieApi from './themoviedb-api-class';
+import SearchMovieApi from './themoviedb-api-class'; // импортируем класс
 
 searchForm = document.querySelector('#search-form');
 galleryBox = document.querySelector('.gallery');
 
-// const url = {
-//   popular: `${BASE_URL}trending/movie/day?api_key=${KEY}`,
-//   search: `${BASE_URL}search/movie?api_key=${KEY}&query=${this.searchQuary}&page=${this.page}&language=en-US&page=1&include_adult=false`,
-//   info: `${BASE_URL}movie/${this.movieId}?api_key=${KEY}&language=en-US`,
-// };
-
-const searchMovieApi = new SearchMovieApi();
+const searchMovieApi = new SearchMovieApi(); // создаем экземпляр класса
 
 searchForm.addEventListener('submit', onSearch);
 
@@ -17,14 +11,18 @@ async function onSearch(evt) {
   evt.preventDefault();
   try {
     searchMovieApi.resetPage();
-    searchMovieApi.quary = searchForm.searchQuery.value.trim();
+    searchMovieApi.quary = searchForm.searchQuery.value.trim(); // для поиска инфо по id также записываем значение id в searchMovieApi.movieId
+
+    if (!searchMovieApi.quary) {
+      console.log('Введите название фильма!');
+      resetMarkup();
+      return;
+    }
 
     const { page, results, total_pages, total_results } =
-      await searchMovieApi.themoviedbApi();
-    // if (!searchMovieApi.quary) {
-    //   resetMarkup();
-    //   return;
-    // }
+      await searchMovieApi.getMovieByName(); // здесь меняем на свой метод класса getPopularFilms()/getInfoByMovieId() и деструктуризируем необходимые данные из респонса
+
+    // дальше копируйте с осторожностью, не факт что будет работать с вашей информацией из ответа
     if (total_results === 0) {
       resetMarkup();
       console.log('Введите нормальный запрос!');
@@ -43,7 +41,7 @@ async function onSearch(evt) {
     });
 
     // resetMarkup();
-    // createImageMarkup(hits);
+    // createImageMarkup();
   } catch (error) {
     console.log(error.message);
   }
