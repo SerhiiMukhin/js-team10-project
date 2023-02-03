@@ -1,1 +1,0 @@
-{"mappings":"AAAeA,SAASC,cAAc","sources":["src/js/spiner.js"],"sourcesContent":["const spiner = document.querySelector('.spiner')\n\nfunction spinerOff(){\n    spiner.classList.add('hidden')\n}\n\nfunction spinerOn(){\n    spiner.classList.remove('hidden')\n}\n\nexport {spinerOff, spinerOn}\n\n"],"names":["document","querySelector"],"version":3,"file":"index.9a85b986.js.map"}
