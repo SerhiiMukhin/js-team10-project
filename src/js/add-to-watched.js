@@ -87,7 +87,3 @@ export const  toWatched = {
 
     },
 }
-
-
-console.log(toWatched.setWatchedOne(a));
-console.log(toWatched.setWatchedOne(b));
