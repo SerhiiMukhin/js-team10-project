@@ -1,1 +1,65 @@
 // Стилі для футера
+.footer {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 29px;
+  padding-bottom: 39px;
+
+  background-color: #f7f7f7;
+
+  @media screen and (min-width: $tablet) {
+    padding: 30px;
+  }
+
+  &__content {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: $secondary-font-size;
+    line-height: 114.285714%; /* 16px/14px */
+
+    @media screen and (max-width: 767px) {
+      max-width: $mobile;
+    }
+    
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      justify-content: center;
+
+      font-size: 16px;
+      line-height: 118.75%; /* 19px/16px */
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: 1279px) {
+      max-width: $tablet;
+    }
+
+    @media screen and (min-width: $desctop) {
+      max-width: $desctop;
+    }
+  }
+}
+.develop {
+  @media screen and (min-width: $tablet) {
+    margin-left: 5px;
+  }
+}
+.copyright {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+
+  color: #545454;
+}
+.modal-students {
+  color: #545454;
+
+  &__link {
+    text-decoration: underline;
+  }
+}
+.footer-icon {
+  margin: 0 5px;
+}
