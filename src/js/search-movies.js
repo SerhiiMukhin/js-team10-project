@@ -35,7 +35,13 @@ async function onSearch(evt) {
 }
 
 function createCardMarkup(arr) {
-  const markup = filmCardTemplate(arr);
+  let newArr = [];
+  arr.map(({ poster_path, title, release_date, genre_ids }) => {
+    const filmDate = release_date.slice(0, 4);
+    const obj = { poster_path, title, filmDate, genre_ids };
+    newArr.push(obj);
+  });
+  const markup = newArr.map(ar => filmCardTemplate(ar)).join('');
   cardBox.insertAdjacentHTML('beforeend', markup);
 }
 
