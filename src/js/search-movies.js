@@ -5,6 +5,7 @@ const searchForm = document.querySelector('#search-form');
 const cardBox = document.querySelector('.js-card-collection');
 const searchMovieApi = new SearchMovieApi(); // создаем экземпляр класса
 searchForm.addEventListener('submit', onSearch);
+getGenres();
 
 async function onSearch(evt) {
   evt.preventDefault();
@@ -47,4 +48,20 @@ function createCardMarkup(arr) {
 
 function resetMarkup() {
   cardBox.innerHTML = '';
+}
+
+async function getGenres() {
+  try {
+    const genres = await searchMovieApi.getMovieGenres();
+    console.log(genres);
+    let genId;
+    let genresObj = { genId: '1' };
+    genres.genres.map(({ id, name }) => {
+      genId = id;
+      genresObj.genId = name;
+    });
+    console.log(genresObj[0]);
+  } catch (error) {
+    console.log(error.message);
+  }
 }
