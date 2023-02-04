@@ -1,10 +1,8 @@
 {{#each this}}
-featch-style-card
 <li class='film_card'>
             <img class="film_card__img" src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='{{title}}' />
             <h2 class="film__title">{{title}}</h2>
             <span>{{#each genres}} {{name}} {{/each}}</span>
             <span>{{release_date}}</span>   
-
 </li>
 {{/each}}
