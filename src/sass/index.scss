@@ -1,5 +1,9 @@
 @import './common';
 
+@import './utils/variables';
+@import './utils/base-reset';
+@import './utils/custom-styles';
+
 @import './header-common';
 @import './header-home';
 @import './header-library';
@@ -12,3 +16,4 @@
 @import './film-card-modal';
 @import './team-modal';
 @import './loader';
+@import './spiner';
