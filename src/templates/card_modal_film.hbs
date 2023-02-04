@@ -1,0 +1,38 @@
+
+{{#each this}}
+        <div class="modal_img">
+          <a>
+            <img class="img" src="'https://image.tmdb.org/t/p/w500{{poster_path}}'" alt='{{title}}'
+          /></a>
+        </div>
+        <div class="modal_container_info">
+          <h2 class="modal_title">{{title}}</h2>
+          <table class="modal_table">
+            <tr>
+              <td class="table_info">Vote / Votes</td>
+              <td class="table_styles ">{{vote_average}} /
+                <span class="table_styles ">/{{vote_count}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="table_info">Popularity</td>
+              <td class="table_styles ">{{popularity}}</td>
+            </tr>
+            <tr>
+              <td class="table_info">Original Title</td>
+              <td class="table_styles ">{{original_title}}</td>
+            </tr>
+            <tr>
+              <td class="table_info">Genre</td>
+              <td class="table_styles">{{name}}</td>
+            </tr>
+          </table>
+          <div class="modal_information">
+            <p class="information_title">About</p>
+            <p class="information_txt">{{overview}}</p>
+          </div>
+         <div class="btn">
+          <button class="btn_watched button">add to watched</button>
+          <button class="btn_queue button">add to queue</button>
+        </div>
+{{/each}}
