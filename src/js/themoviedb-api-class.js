@@ -23,11 +23,11 @@ export default class SearchMovieApi {
     return response.data;
   }
 
-  async getInfoByMovieId() {
-    const url = `${BASE_URL}movie/${this.movieId}?api_key=${API_KEY}&language=${this.lang}`;
-    const response = await axios.get(url);
-    return response.data;
-  }
+  // async getInfoByMovieId() {
+  //   const url = `${BASE_URL}movie/${this.movieId}?api_key=${API_KEY}&language=${this.lang}`;
+  //   const response = await axios.get(url);
+  //   return response.data;
+  // }
 
   incrementPage() {
     this.page += 1;
