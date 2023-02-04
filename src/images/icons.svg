@@ -14,13 +14,11 @@
                 d="M16 30.583l-2.24-2.24c-8.32-7.36-13.76-12.32-13.76-18.4 0-4.96 3.84-8.8 8.8-8.8 2.72 0 5.44 1.28 7.2 3.36 1.76-2.080 4.48-3.36 7.2-3.36 4.96 0 8.8 3.84 8.8 8.8 0 6.080-5.44 11.040-13.76 18.4l-2.24 2.24z">
             </path>
         </symbol>
-        <symbol id="icon-logo-24x24" viewBox="0 0 32 32">
-            <path fill="none" stroke="#fff" stroke-width="2.6667" stroke-miterlimit="4" stroke-linecap="round"
-                stroke-linejoin="round" style="stroke: var(--color2, #fff)"
-                d="M26.427 2.667h-20.853c-1.605 0-2.907 1.301-2.907 2.907v0 20.853c0 1.605 1.301 2.907 2.907 2.907v0h20.853c1.605 0 2.907-1.301 2.907-2.907v0-20.853c0-1.605-1.301-2.907-2.907-2.907v0zM9.333 2.667v26.667M22.667 2.667v26.667M2.667 16h26.667M2.667 9.333h6.667M2.667 22.667h6.667M22.667 22.667h6.667M22.667 9.333h6.667">
-            </path>
+        <symbol id="icon-logo" viewBox="0 0 24 24">
+           <path fill="none" d="M19.82 2H4.18A2.18 2.18 0 002 4.18v15.64A2.18 2.18 0 004.18 22h15.64A2.18 2.18 0 0022 19.82V4.18A2.18 2.18 0 0019.82 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+           <path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </symbol>
-        <symbol id="icon-search-12x12" viewBox="0 0 32 32">
+        <symbol id="icon-search" viewBox="0 0 32 32">
             <path fill="none" stroke="#fff" stroke-width="2.6667" stroke-miterlimit="4" stroke-linecap="round"
                 stroke-linejoin="round" style="stroke: var(--color2, #fff)"
                 d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667v0c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667v0zM28 28l-5.8-5.8">
