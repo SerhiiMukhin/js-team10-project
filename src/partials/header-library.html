@@ -1,15 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/sass/_header-library.scss">
-    <title>Library</title>
-</head>
-<body>
-    <header class="header__library">
+    <header class="header header__library">
         <div class="header__library-navigation">
             <a href="/src/index.html" class="logo">
               <svg class="logo__svg">
@@ -18,29 +8,27 @@
               <span class="logo__text">Filmoteka</span>
             </a>
             <nav class="menu__library-nav">
-                <ul class="menu__library-list">
+                <ul class="menu__library-list list">
                     <li class="menu__library-item">
                         <a href="/src/index.html" class="menu__link">Home</a>
                     </li>
                     <li class="menu__library-item">
-                        <a href="" class="menu__link">My library</a>
+                        <a href="" class="menu__link studio-line current">My library</a>
                     </li>
                 </ul>
             </nav>
-            <div class="filter">
-                <ul class="filter__list">
-                    <il class="filter__item">
-                        <button class="filter__button" type="button">Watched</button>
+            </div> 
+            <div class="storage">
+                <ul class="storage__list">
+                    <il class="storage__item">
+                        <button class="storage__button button" type="button">Watched</button>
                     </il>
-                    <il class="filter__item">
-                        <button class="filter__button" type="button">Queue</button>
+                    <il class="storage__item">
+                        <button class="storage__button button" type="button">Queue</button>
                     </il>
                 </ul>
             </div>
-            </div> 
         </div>   
-</body>
-</html>
 
 
 
