@@ -1,8 +1,8 @@
 import SearchMovieApi from './themoviedb-api-class'; // импортируем класс
 import filmCardTemplate from '../templates/card_film.hbs';
 
-searchForm = document.querySelector('#search-form');
-cardBox = document.querySelector('.js-card-collection');
+const searchForm = document.querySelector('#search-form');
+const cardBox = document.querySelector('.js-card-collection');
 const searchMovieApi = new SearchMovieApi(); // создаем экземпляр класса
 searchForm.addEventListener('submit', onSearch);
 
