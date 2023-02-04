@@ -1,10 +1,10 @@
-import * as basicLightbox from 'basiclightbox';
+// import * as basicLightbox from 'basiclightbox';
 import SearchMovieApi from './themoviedb-api-class';
 import { refs } from './get-refs';
-import templatesModalCard from '../templates/card_film.hbs';
-import toWatched from './js/add-to-watched';
-import toQueue from './js/add-to-queue';
-import { spinerOn, spinerOff } from './spiner';
+// import templatesModalCard from '../templates/';
+// import toWatched from './js/add-to-watched';
+// import toQueue from './js/add-to-queue';
+// import { spinerOn, spinerOff } from './spiner';
 
 const moviesApiService = new SearchMovieApi();
 
