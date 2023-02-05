@@ -23,6 +23,5 @@ function getLocalOne(id){
         return false
     }
 }
-console.log(getLocalOne(13931));
 
 export {addLocal, getLocalOne}
