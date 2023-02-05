@@ -143,6 +143,10 @@ header {
   &:focus {
     background-color: #ff6b01;
   }
+  &.current{
+    background-color: #ff6b01;
+
+  }
 }
 
 .studio-line {
