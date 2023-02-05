@@ -6,13 +6,13 @@
 //для запису одного фільма викликаємо setWatchedOne(фільм) він приймає обєкт (цілий обєкт одного фільма) і записує в масив в локальне сховище(LS), 
 //якщо фільм добавило повертає true якщо виникла помилка поверне false.
 
-//для того щоб отримати один збережений фільм викликаємо toQueue.getWatchedOne(фільм) приймає цілий обєкт, шукає в LS  по id фільм, повертає масив з одним обєктом, 
+//для того щоб отримати один збережений фільм викликаємо toQueue.getWatchedOne(ід) приймає ід фільма, шукає в LS  по id фільм, повертає масив з одним обєктом, 
 //якщо фільм не знайшло повертає пустий масив, якщо не знайшло записів про Json в LS  поверне undefined, якщо виникла помилка з LS повертає false.
  
 //для того щоб повернути всі збережені фільми toQueue.getWatchedAll(фільм) повертає масив обєктів
 //якщо фільми не знайшло повертає пустий масив, якщо не знайшло записів про Json в LS  поверне undefined, якщо виникла помилка з LS повертає false.
 
-//для видалення фільму з переглянутих removeWatchedOneEl(фільм) передаємо цілий обєкт , перезаписує масив в LS без переданого вільму і повертає true якщо все успішно , 
+//для видалення фільму з переглянутих removeWatchedOneEl(ід) передаємо ід фільма , перезаписує масив в LS без переданого вільму і повертає true якщо все успішно , 
 //якщо не знайшло записів про Json в LS  поверне undefined, якщо виникла помилка з LS повертає false.
 
 
@@ -28,8 +28,8 @@ export const toWatched = {
     },
 
 
-    removeMovie(el, arr){
-        return arr.filter(e => e.id !== el.id)
+    removeMovie(id, arr){
+        return arr.filter(e => e.id !== id)
     },
 
 
@@ -41,11 +41,11 @@ export const toWatched = {
     },
 
 
-    getWatchedOne(el){
+    getWatchedOne(id){
         if (localStorage.getItem(WATCHED)) {
             const arr = JSON.parse(localStorage.getItem(WATCHED));
 
-            return arr.filter(e => e.id === el.id)
+            return arr.filter(e => e.id === id)
         }
         return undefined
     },
@@ -72,12 +72,12 @@ export const toWatched = {
     },
 
 
-    removeWatchedOneEl(el){
+    removeWatchedOneEl(id){
         try{
         if (localStorage.getItem(WATCHED)) {
             const arr = JSON.parse(localStorage.getItem(WATCHED));
 
-            localStorage.setItem(WATCHED, JSON.stringify(this.removeMovie(el, arr)))
+            localStorage.setItem(WATCHED, JSON.stringify(this.removeMovie(id, arr)))
             return true
         }
         return undefined
