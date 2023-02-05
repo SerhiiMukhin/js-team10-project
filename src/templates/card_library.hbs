@@ -1,17 +1,17 @@
 {{#each this}}
-<li class="library__item">
-    <a class="library__card" href="#">
+<li class="library-section__item">
+    <a class="library-section__card" href="#">
         <img 
-            class="library__card-img"
+            class="library-section__card-img"
             src="https://image.tmdb.org/t/p/w500{{poster_path}}"
             alt="alt">
-        <div class="library__card-info">
-          <h2 class="library__card-title">{{title}}</h2>
-          <p class="library__card-description">
-          <span class="library__card-genre">{{name}}</span>
-          <span class="library__card-genredelimiter">|</span>
-          <span class="library__card-year">{{filmDate}}</span>
-          <span class="library__card-rating">{{vote_average}}</span>
+        <div class="library-section__card-info">
+          <h2 class="library-section__card-title">{{title}}</h2>
+          <p class="library-section__card-description">
+          <span class="library-section__card-genre">{{name}}</span>
+          <span class="library-section__card-genredelimiter">|</span>
+          <span class="library-section__card-year">{{filmDate}}</span>
+          <span class="library-section__card-rating">{{vote_average}}</span>
           </p>
         </div>
     </a>
