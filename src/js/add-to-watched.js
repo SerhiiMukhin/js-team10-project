@@ -18,7 +18,7 @@
 
 const WATCHED = 'to-watched';
 
-export const  toWatched = {
+export const toWatched = {
 
     addMovie(movie, arr) {
         if (arr.every(e => e.id !== movie.id)) {

@@ -29,8 +29,18 @@ export default class SearchMovieApi {
     return response.data;
   }
 
+  async getMovieGenres() {
+    const url = `${BASE_URL}genre/movie/list?api_key=${API_KEY}`;
+    const response = await axios.get(url);
+    return response.data;
+  }
+
   incrementPage() {
     this.page += 1;
+  }
+
+  decrementPage() {
+    this.page -= 1;
   }
 
   resetPage() {
