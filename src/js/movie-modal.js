@@ -8,7 +8,7 @@ import { refs } from './get-refs';
 
 const moviesApiService = new SearchMovieApi();
 
-// refs.movies.addEventListener('click', onMovieClick);
+refs.movies.addEventListener('click', onMovieClick);
 
 // Открыти модалки с фильмом
 function onMovieClick(event) {}
