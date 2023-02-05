@@ -1,6 +1,5 @@
 import SearchMovieApi from './themoviedb-api-class'; // импортируем класс
 import filmCardTemplate from '../templates/card_film.hbs';
-
 const searchForm = document.querySelector('#search-form');
 const cardBox = document.querySelector('.js-card-collection');
 const searchMovieApi = new SearchMovieApi(); // создаем экземпляр класса
@@ -17,7 +16,7 @@ async function onSearch(evt) {
       resetMarkup();
       return;
     }
-
+    
     const { page, results, total_pages, total_results } =
       await searchMovieApi.getMovieByName(); // здесь меняем на свой метод класса getPopularFilms()/getInfoByMovieId() и деструктуризируем необходимые данные из респонса
 
