@@ -25,6 +25,9 @@ function onMovieClick(event) {
   refs.modalMovie.innerHTML = modal(getLocalOne(id));
 }
 
+
+
+
 // data="id"
 
 // Обработка слушателей модального окна
