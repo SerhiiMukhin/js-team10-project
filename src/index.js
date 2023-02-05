@@ -7,5 +7,5 @@ import './js/movie-modal'
 import './js/search-movies';
 import './js/spiner';
 import './js/themoviedb-api-class';
-
+import './js/pagination'
 import './templates/card_film.hbs';
