@@ -1,5 +1,6 @@
 import './js/add-to-queue';
 import './js/add-to-watched';
+import './js/add-local';
 // import './js/api-key';
 import './js/get-refs';
 import './js/movie-modal'
