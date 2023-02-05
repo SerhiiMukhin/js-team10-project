@@ -21,3 +21,141 @@
         padding-right: 32px;
     }
 }
+
+// Стилі для контейнера бібліотеки
+
+.container {
+    // mobile styles:
+    max-width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    // tablet styles:
+    @media screen and (min-width: 768px) {
+        max-width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    // desktop styles:
+    @media screen and (min-width: 1280px) {
+        max-width: 1280px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+.library {
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    &__card-set {    
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media screen and (min-width: 1280px) {
+            row-gap: 32px;
+            column-gap: 16px;
+        }
+
+        }
+
+    &__card-img {
+        display: block;
+        width: 280px;
+        height: auto;
+        
+        margin-bottom: 8px;
+
+        @media screen and (min-width: 768px) {
+            width: 336px;
+        }
+
+        @media screen and (min-width: 1280px) {
+            width: 394px;
+        }
+
+    }
+
+    &__card-title {
+        text-transform: uppercase; 
+    }
+
+    &__card-title, 
+    &__card-description {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: calc(16 / 12);
+        color: #000000;
+        
+        @media screen and (min-width: 1280px) {
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: calc(24 / 20);
+        }
+
+    }
+
+    &__card-description {
+        display: flex;
+    }
+    
+    &__card-genre {
+        margin-right: 2px;
+    }
+
+    &__card-genredelimiter {
+        margin-right: 2px;
+    }
+
+    &__card-year {
+        margin-right: 9px;
+    }
+
+    &__card-genre, &__card-genredelimiter, &__card-year  {
+        color:#FF6B08;
+    }
+
+    &__card-rating {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: calc(14 / 12);
+        color: #FFFFFF;
+
+        width: 36px;
+        height: 16px;
+
+        background: #FF6B01;
+        border-radius: 5px;
+
+        @media screen and (min-width: 1280px) {
+            width: 40px;
+            height: 20px;
+        }
+
+    }
+
+}
