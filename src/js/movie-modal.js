@@ -1,35 +1,34 @@
 // import * as basicLightbox from 'basiclightbox';
 import { refs } from './get-refs';
-import { getLocalOne } from './add-local';
+import {getLocalOne} from './add-local'
+
 import modal from '../templates/card_modal_film.hbs';
-import './search-movies';
+// import './search-movies';
 // import templatesModalCard from '../templates/';
 // import toWatched from './js/add-to-watched';
 // import toQueue from './js/add-to-queue';
 // import { spinerOn, spinerOff } from './spiner';
 
-// refs.movieCard.addEventListener('click', onMovieClick);
+const list = document.querySelector('.container')
+
+list.addEventListener('click', onMovieClick);
 
 // Открытие модалки с фильмом
-// function onMovieClick(event) {
-//   event.preventDefault();
+function onMovieClick(event) {
+  event.preventDefault();
+  
+  if (!event.target.classList.contains('card__img')) return;
 
-//   console.log(event.currentTarget);
+  const id = +event.target.dataset.id
+  modalCloseHandler()
 
-//   if (!event.currentTarget.classList.contains('card')) return;
-
-//   modalCloseHandler();
-
-//   const array = getLocalOne(id);
-
-//   refs.modalMovie.innerHTML = modal(array);
-
-//   removeEventListener();
-// }
+  refs.modalMovie.innerHTML = modal(getLocalOne(id));
+}
 
 // data="id"
 
 // Обработка слушателей модального окна
+
 function modalCloseHandler() {
   refs.body.classList.add('disable-scroll');
   refs.modalClose.addEventListener('click', onCloseModal);
