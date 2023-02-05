@@ -2,7 +2,7 @@ export const refs = {
   // назва елементу: document.querySelector("селектор"),
   // назва елементу: document.querySelector("селектор"),
   body: document.querySelector('body'),
-  movies: document.querySelector('.movies__list'),
+  movieCard: document.querySelector('.card'),
   galleryBox: document.querySelector('.gallery'),
   modalMovie: document.querySelector('.modal__card'),
   backdrop: document.querySelector('.backdrop'),

@@ -3,8 +3,8 @@ import './js/add-to-watched';
 import './js/add-local';
 // import './js/api-key';
 import './js/get-refs';
-import './js/movie-modal'
 import './js/search-movies';
+import './js/movie-modal';
 import './js/spiner';
 import './js/themoviedb-api-class';
 
