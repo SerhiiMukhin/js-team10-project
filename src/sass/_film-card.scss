@@ -1,22 +1,34 @@
 .card_collection {
   padding-top: 20px;
   padding-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
 
   @media screen and (min-width: $tablet) {
     padding-top: 60px;
     padding-bottom: 60px;
+    gap: 32px;
   }
+
+    @media screen and (min-width: $desctop) {
+      gap: 16px;
+    }
 }
 
 .card {
   margin-bottom: 20px;
   width: 280px;
   cursor: pointer;
+
+&:hover {
+box-shadow: $accent-color;
+}
+
   @media screen and (min-width: $tablet) {
     width: 336px;
   }
   @media screen and (min-width: $desctop) {
-    width: 395px;
+    width: 394px;
   }
 }
 
