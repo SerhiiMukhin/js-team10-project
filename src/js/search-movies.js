@@ -40,9 +40,9 @@ async function onSearch(evt) {
 
 function createCardMarkup(arr) {
   let newArr = [];
-  arr.map(({ poster_path, title, release_date, genre_ids }) => {
+  arr.map(({ poster_path, title, release_date, genre_ids, id }) => {
     const filmDate = release_date.slice(0, 4);
-    const obj = { poster_path, title, filmDate, genre_ids };
+    const obj = { poster_path, title, filmDate, genre_ids, id };
     newArr.push(obj);
   });
   // const markup = newArr.map(ar => filmCardTemplate(ar)).join('');
