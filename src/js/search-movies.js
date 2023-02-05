@@ -42,7 +42,8 @@ function createCardMarkup(arr) {
     const obj = { poster_path, title, filmDate, genre_ids };
     newArr.push(obj);
   });
-  const markup = newArr.map(ar => filmCardTemplate(ar)).join('');
+  // const markup = newArr.map(ar => filmCardTemplate(ar)).join('');
+  const markup = filmCardTemplate(newArr);
   cardBox.insertAdjacentHTML('beforeend', markup);
 }
 
