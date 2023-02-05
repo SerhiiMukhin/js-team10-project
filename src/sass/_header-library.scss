@@ -30,7 +30,7 @@ li {
 }
 
 // Унікальні стилі для хедера бібліотеки
-header {
+.header__library-style {
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -117,7 +117,7 @@ header {
   }
 }
 
-.button {
+.button__library {
   display: inline-block;
   cursor: pointer;
   padding: 14px 36px 12px;
@@ -131,7 +131,7 @@ header {
   border: 1px solid #fff;
   border-radius: 5px;
 
-  .button {
+  .button__library {
     @media screen and (min-width: 768px) {
       padding-left: 38px;
       padding-right: 38px;
@@ -160,12 +160,12 @@ header {
 
 // logo
 
-.logo {
+.header__library-logo {
   display: flex;
   align-self: flex-end;
 }
 
-.logo {
+.header__library-logo {
   @media screen and (max-width: 767px) {
     margin-right: 112px;
   }
@@ -179,7 +179,7 @@ header {
   }
 }
 
-.logo__svg {
+.header__library-logo-svg {
   width: 20px;
   height: 20px;
   align-self: center;
@@ -190,7 +190,7 @@ header {
   margin-right: 12px;
 }
 
-.logo__text {
+.header__library-logo-text {
   font-size: 30px;
   line-height: 1.72;
   font-weight: 500;
@@ -202,7 +202,7 @@ header {
   }
 }
 
-.logo__svg {
+.header__library-logo-svg {
   @media screen and (min-width: 768px) and (max-width: 1280px) {
     margin-right: 10px;
   }
