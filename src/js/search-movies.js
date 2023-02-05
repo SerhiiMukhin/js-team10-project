@@ -1,5 +1,6 @@
 import SearchMovieApi from './themoviedb-api-class'; // импортируем класс
 import filmCardTemplate from '../templates/card_film.hbs';
+import {addLocal} from './add-local'
 
 const searchForm = document.querySelector('.js-search-form');
 
@@ -29,6 +30,7 @@ async function onSearch(evt) {
       return;
     }
 
+    addLocal(results);
     resetMarkup();
     createCardMarkup(results);
   } finally {
