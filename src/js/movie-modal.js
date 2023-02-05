@@ -8,26 +8,23 @@ import './search-movies';
 // import toQueue from './js/add-to-queue';
 // import { spinerOn, spinerOff } from './spiner';
 
-// refs.movieCard.addEventListener('click', onMovieClick);
-
 // Открытие модалки с фильмом
-// function onMovieClick(event) {
-//   event.preventDefault();
 
-//   console.log(event.currentTarget);
+const list = document.querySelector('.container');
 
-//   if (!event.currentTarget.classList.contains('card')) return;
+list.addEventListener('click', onMovieClick);
 
-//   modalCloseHandler();
+function onMovieClick(event) {
+  event.preventDefault();
 
-//   const array = getLocalOne(id);
+  if (!event.target.classList.contains('card__img')) return;
 
-//   refs.modalMovie.innerHTML = modal(array);
+  const id = +event.target.dataset.id;
 
-//   removeEventListener();
-// }
+  modalCloseHandler();
 
-// data="id"
+  refs.modalMovie.innerHTML = modal(getLocalOne(id));
+}
 
 // Обработка слушателей модального окна
 function modalCloseHandler() {
