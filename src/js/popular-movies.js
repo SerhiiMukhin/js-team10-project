@@ -1,6 +1,7 @@
 import cardFilm from '../templates/card_film.hbs';
 import SearchMovieApi from './themoviedb-api-class';
-import {addLocal} from './add-local'
+import { spinerOff, spinerOn } from './spiner';
+import {addLocal} from './add-local';
 
 // const searchFormPage = document.querySelector('#search-form');
 const cardsContainer = document.getElementById('film-cards');
@@ -12,13 +13,17 @@ function createPopularMarkup(results) {
 }
 
 async function onSearch() {
-  const searchMovieApi = new SearchMovieApi();
-  // console.log(searchMovieApi.getPopularFilms());
-  const response = await searchMovieApi.getPopularFilms();
-  // console.log(response);
-  createPopularMarkup(response.results);
-  addLocal(response.results) //добавляє в локалстор
-
+  try {
+    spinerOn();
+    const searchMovieApi = new SearchMovieApi();
+    // console.log(searchMovieApi.getPopularFilms());
+    const response = await searchMovieApi.getPopularFilms();
+    setTimeout(spinerOff, 500);
+    // console.log(response);
+    createPopularMarkup(response.results);
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', onSearch);
