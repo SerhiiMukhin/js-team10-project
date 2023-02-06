@@ -5,3 +5,5 @@ import './js/add-local';
 import './js/get-refs';
 import './js/spiner';
 // import './js/movie-modal'
+import './js/pagination-library';
+import './js/pagination-library-queue';

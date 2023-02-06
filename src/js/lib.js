@@ -2,6 +2,9 @@ import {toQueue} from './add-to-queue'
 import {toWatched} from './add-to-watched'
 import card from "../templates/card_film.hbs"
 // import {addLocal, getLocalOne} from './add-local'
+import { createLibraryPaginationWatched } from './pagination-library';
+import { createLibraryPaginationQueue } from './pagination-library-queue';
+
 
 const list = document.querySelector('.library-section__card-set')
 const btnWatch = document.querySelector('.js-watch')
@@ -18,9 +21,8 @@ function start(){
 start()
 
 function onQueue() {
-    const data = toQueue.getQueueAll()
-
-   renderCard(data)
+    
+    createLibraryPaginationQueue()
 
    if(!btnQueue.classList.contains('current')){
     btnQueue.classList.add('current')
@@ -31,9 +33,8 @@ function onQueue() {
 }
 
 function onWatch() {
-    const data = toWatched.getWatchedAll()
     
-    renderCard(data)
+    createLibraryPaginationWatched()
 
     if(!btnWatch.classList.contains('current')){
         btnWatch.classList.add('current')
@@ -44,7 +45,7 @@ function onWatch() {
 
 }
 
-function renderCard(arr){
+ export function renderCard(arr){
     try{
     if(arr.length > 0){
         list.innerHTML = card(arr)
@@ -53,3 +54,5 @@ function renderCard(arr){
     return list.innerHTML ="🐷"
 }
 }
+
+
