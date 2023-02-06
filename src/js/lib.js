@@ -48,7 +48,9 @@ function onWatch() {
  export function renderCard(arr){
     try{
     if(arr.length > 0){
-        list.innerHTML = card(arr)
+       return list.innerHTML = card(arr)
+    }else{
+        return list.innerHTML ="🐷"
     }
 }catch{
     return list.innerHTML ="🐷"
