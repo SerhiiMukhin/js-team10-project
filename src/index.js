@@ -1,3 +1,5 @@
+import './js/on-load';
+import './js/get-genres';
 import './js/add-to-queue';
 import './js/add-to-watched';
 import './js/add-local';
