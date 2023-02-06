@@ -46,7 +46,7 @@ function onCloseModal() {
 
 // Закрытие модалки по backdrop
 function onCloseModalBackdrop(event) {
-  if (event.target === refs.backdrop) {
+  if (event.target.classList.contains('modal')) {
     refs.backdrop.classList.add('is-hidden');
   }
   removeEventListener();
