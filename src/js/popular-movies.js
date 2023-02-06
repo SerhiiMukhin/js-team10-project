@@ -1,5 +1,6 @@
 import cardFilm from '../templates/card_film.hbs';
 import SearchMovieApi from './themoviedb-api-class';
+import {addLocal} from './add-local'
 
 // const searchFormPage = document.querySelector('#search-form');
 const cardsContainer = document.getElementById('film-cards');
@@ -16,6 +17,8 @@ async function onSearch() {
   const response = await searchMovieApi.getPopularFilms();
   // console.log(response);
   createPopularMarkup(response.results);
+  addLocal(response.results) //добавляє в локалстор
+
 }
 
 document.addEventListener('DOMContentLoaded', onSearch);
