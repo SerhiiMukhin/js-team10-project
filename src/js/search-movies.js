@@ -1,17 +1,15 @@
-import { ScrollTop } from '../../node_modules/@georapbox/scroll-top-element/dist/scroll-top.js';
-ScrollTop.defineCustomElement(); //для боковой кнопки скрола наверх (Никита)
-
 import SearchMovieApi from './themoviedb-api-class';
 import filmCardTemplate from '../templates/card_film.hbs';
-import { addLocal } from './add-local';
 import { spinerOff, spinerOn } from './spiner';
+import { addLocal } from './add-local';
+import { getGenre } from './get-genres';
+import { ScrollTop } from '../../node_modules/@georapbox/scroll-top-element/dist/scroll-top.js'; //для боковой кнопки скрола наверх (Никита)
 
 const searchForm = document.querySelector('.js-search-form');
 const cardBox = document.querySelector('.js-card-collection');
 const searchMovieApi = new SearchMovieApi();
 searchForm.addEventListener('submit', onSearch);
-let movieGenres = [];
-getGenres(); // получаем жанры (нужно переделать чтобы хранились в local storage)
+ScrollTop.defineCustomElement();
 
 async function onSearch(evt) {
   evt.preventDefault();
@@ -26,7 +24,7 @@ async function onSearch(evt) {
       return;
     }
 
-    const { page, results, total_pages, total_results } =
+    const { page, results, total_pages, total_results, } =
       await searchMovieApi.getMovieByName();
     setTimeout(spinerOff, 500);
 
@@ -40,14 +38,14 @@ async function onSearch(evt) {
     resetMarkup();
     createCardMarkup(results);
   } catch (error) {
-    // spinerOff();
+    spinerOff();
     console.log(error.message);
   }
 }
-// в createCardMarkup(arr) на базе results создаем новый массив newArr,
+// в createArrMarkup(arr) на базе results создаем новый массив newArr,
 // в котором id жанров превращаются в строку жанров, а дату обрезаем,
 // и прокидываем newArr в функцию hbs
-function createCardMarkup(arr) {
+function createNewArr(arr) {
   let newArr = [];
   arr.map(({ poster_path, title, release_date, genre_ids, id }) => {
     const filmGenres = getGenre(genre_ids).join(', ');
@@ -55,36 +53,16 @@ function createCardMarkup(arr) {
     const obj = { poster_path, title, filmDate, filmGenres, id };
     newArr.push(obj);
   });
+  return newArr;
+}
 
-  const markup = filmCardTemplate(newArr);
+function createCardMarkup(arr) {
+  const markup = filmCardTemplate(createNewArr(arr));
   cardBox.insertAdjacentHTML('beforeend', markup);
-  console.log(newArr);
 }
 
-// getGenres() получает массив обьектов жанров с бекенда и записывает в movieGenres
-async function getGenres() {
-  try {
-    const { genres } = await searchMovieApi.getMovieGenres();
-    movieGenres = genres;
-  } catch (error) {
-    console.log(error.message);
-  }
-}
-
-// getGenre(arr) перебирает массив объектов жанров и сравнивает id с id,
-// которые приходят в карточке фильма,
-// если совпадают, то передает название жанра в новый массив,
-// и возвращает этот массив
-function getGenre(arr) {
-  let genrNames = [];
-  movieGenres.map(({ id, name }) => {
-    arr.map(ar => {
-      if (ar === id) {
-        genrNames.push(name);
-      }
-    });
-  });
-  return genrNames;
+function resetMarkup() {
+  cardBox.innerHTML = '';
 }
 
 // async function getGenresTest() {
@@ -104,6 +82,4 @@ function getGenre(arr) {
 //   }
 // }
 
-function resetMarkup() {
-  cardBox.innerHTML = '';
-}
+export { createNewArr };
