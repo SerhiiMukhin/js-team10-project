@@ -1,5 +1,6 @@
-import {toQueue} from './add-to-queue'
-import {toWatched} from './add-to-watched'
+// import { toQueue } from './add-to-queue'
+import { addLocal } from './add-local'
+// import { toWatched } from './add-to-watched'
 import card from "../templates/card_film.hbs"
 // import {addLocal, getLocalOne} from './add-local'
 import { createLibraryPaginationWatched } from './pagination-library';
@@ -21,6 +22,8 @@ function start(){
 start()
 
 function onQueue() {
+
+    // addLocal(toQueue.getQueueAll())
     
     createLibraryPaginationQueue()
 
@@ -33,7 +36,7 @@ function onQueue() {
 }
 
 function onWatch() {
-    
+    // addLocal(toWatched.getWatchedAll())
     createLibraryPaginationWatched()
 
     if(!btnWatch.classList.contains('current')){
@@ -46,8 +49,10 @@ function onWatch() {
 }
 
  export function renderCard(arr){
+     addLocal(arr)
     try{
     if(arr.length > 0){
+
        return list.innerHTML = card(arr)
     }else{
         return list.innerHTML ="🐷"

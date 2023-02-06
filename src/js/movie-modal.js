@@ -3,7 +3,7 @@ import { refs } from './get-refs';
 import { getLocalOne } from './add-local';
 import {watchedCurrent} from './modal-btn-add-local'
 import modal from '../templates/card_modal_film.hbs';
-import './search-movies';
+// import './search-movies';
 // import templatesModalCard from '../templates/';
 // import toWatched from './js/add-to-watched';
 // import toQueue from './js/add-to-queue';

@@ -1,6 +1,8 @@
 import { getLocalOne } from './add-local';
 import { toWatched } from './add-to-watched';
 import { toQueue } from './add-to-queue';
+// import {createLibraryPaginationWatched} from './pagination-library'
+// import {createLibraryPaginationQueue} from './pagination-library-queue'
 
 
 const backdrop = document.querySelector('.backdrop')
@@ -71,13 +73,13 @@ export function watchedCurrent(id){
         btn_watched: document.querySelector('.btn_watched'),
         btn_queue: document.querySelector('.btn_queue')
     }
-    if(toWatched.getWatchedOne(id)){
+    if(toWatched.getWatchedOne(id) !== undefined && toWatched.getWatchedOne(id).length > 0){
         if(toWatched.getWatchedOne(id).length > 0){
             toWatchAddCurrent(btn.btn_watched)
         }
     }
 
-    if(toQueue.getQueueOne(id)){
+    if(toQueue.getQueueOne(id) !== undefined && toQueue.getQueueOne(id).length > 0){
         if(toQueue.getQueueOne(id).length > 0){
             toQueueAddCurent(btn.btn_queue)
         }
@@ -98,11 +100,19 @@ function toQueueAddCurent(btn){
 }
 
 function removeWatchCurrent(btn){
-    btn.classList.remove(watchBtn)
-    btn.textContent = 'add to watched';
+    // try{
+    //     createLibraryPaginationWatched()
+    // }finally{
+        btn.classList.remove(watchBtn)
+        btn.textContent = 'add to watched';
+    // }
 }
 
 function removeQueueCurent(btn){
+    // try{
+    //     createLibraryPaginationQueue()
+    // }finally{
     btn.classList.remove(queueBth)
     btn.textContent = 'add to queue';
+// }
 }
