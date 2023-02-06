@@ -3,14 +3,13 @@
   z-index: 1000;
   width: 100%;
   height: 100%;
-  // background-color: rgb(0, 0, 0, 0.25);
-  background-color: blue;
+  background-color: rgb(0, 0, 0, 0.25);
+
   top: 0;
   left: 0;
 
   @media screen and (min-width: $desctop) {
-    // background-color: transparent;
-    background-color: blue;
+    background-color: transparent;
   }
 }
 .modal {
@@ -20,12 +19,15 @@
   min-height: 100%;
   padding: 20px;
 }
-.modal__card {
+.modal_position {
   position: relative;
+}
+.modal__card {
+  // position: relative;
   background-color: $primary-bgc;
   color: $primary-text-color;
   height: 90vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -37,8 +39,6 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: flex-start;
-
-    overflow-y: hidden;
 
     height: 100%;
     max-width: 704px;
@@ -86,6 +86,7 @@
 .modal_img {
   max-width: 240px;
   height: 357px;
+
   @media screen and (min-width: $tablet) {
     max-width: 264px;
     height: 374px;
@@ -114,6 +115,7 @@
 .img {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
   // background-repeat: no-repeat;
   // background-size: auto;
   // background-size: contain;
@@ -203,7 +205,7 @@
   display: inline-block;
   max-width: 240px;
   max-height: 260px;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-bottom: 20px;
 
   @media screen and (min-width: $tablet) {
@@ -214,7 +216,7 @@
   @media screen and (min-width: $desctop) {
     max-width: 391px;
     max-height: 184px;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-bottom: 20px;
   }
 }
