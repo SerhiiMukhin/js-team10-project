@@ -3,6 +3,7 @@
   padding-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
 
   @media screen and (min-width: $tablet) {
     padding-top: 60px;
@@ -10,9 +11,10 @@
     gap: 32px;
   }
 
-    @media screen and (min-width: $desctop) {
-      gap: 16px;
-    }
+  @media screen and (min-width: $desctop) {
+    column-gap: 16px;
+    row-gap: 32px;
+  }
 }
 
 .card {
@@ -20,9 +22,9 @@
   width: 280px;
   cursor: pointer;
 
-&:hover {
-box-shadow: $accent-color;
-}
+  &:hover {
+    box-shadow: 10px 5px 5px $accent-color;
+  }
 
   @media screen and (min-width: $tablet) {
     width: 336px;
@@ -45,6 +47,11 @@ box-shadow: $accent-color;
   }
 }
 
+.card__data {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card__title {
   font-family: $primary-font-family;
   font-size: $primary-font-size;
@@ -58,6 +65,7 @@ box-shadow: $accent-color;
     line-height: 1.2;
   }
 }
+
 
 .card__genres {
   font-family: $primary-font-family;
@@ -83,4 +91,18 @@ box-shadow: $accent-color;
     font-size: 20px;
     line-height: 1.2;
   }
+}
+
+.card__undefined {
+  color: $accent-color;
+
+    font-family: $primary-font-family;
+      font-size: $primary-font-size;
+      line-height: 1.33;
+      text-align: left;
+    
+      @media screen and (min-width: $desctop) {
+        font-size: 20px;
+        line-height: 1.2;
+      }
 }
