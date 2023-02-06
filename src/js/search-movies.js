@@ -26,7 +26,7 @@ async function onSearch(evt) {
       return;
     }
 
-    const { page, results, total_pages, total_results, } =
+    const { page, results, total_pages, total_results } =
       await searchMovieApi.getMovieByName();
     setTimeout(spinerOff, 500);
 
@@ -58,6 +58,7 @@ function createCardMarkup(arr) {
 
   const markup = filmCardTemplate(newArr);
   cardBox.insertAdjacentHTML('beforeend', markup);
+  console.log(newArr);
 }
 
 // getGenres() получает массив обьектов жанров с бекенда и записывает в movieGenres
