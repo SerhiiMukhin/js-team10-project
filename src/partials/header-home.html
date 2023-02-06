@@ -19,35 +19,23 @@
       </ul>
     </nav>
   </div>
-  <!-- 
-    Структура именования классов по БЭМу:
-        search-form
-        search-form__content
-        search-form__input
-        search-form__submit-btn
-        search-error 
-        search-error__text 
-!!!!!!!! И нужно форматировать через Prettier, чтобы не было ошибок!
--->
   <form class="search-form js-search-form" id="search-form-header">
-    <div class="search-content">
       <input
-        type="text"
-        class="search-form-input"
+      class="search-form-input header-form__input"
         name="query"
         autocomplete="off"
+        type="text"
         placeholder="Movie search"
       />
-      <button type="submit" class="search-form-submit-btn">
-        <svg width="12px" height="12px">
+      <button class="header-form__btn" type="submit" aria-label="Search">
+        <svg class="header-form__icon" width="12" height="12">
           <use href="./images/icons.svg#icon-search-12x12"></use>
         </svg>
       </button>
-    </div>
-  </form>
-  <div class="search-error is-hidden">
-    <p class="search-error-text">
+    </form>
+    <p class="header-form__error is-hidden">
       Search result not successful. Enter the correct movie name and try again.
     </p>
+   
   </div>
 </header>

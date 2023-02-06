@@ -143,6 +143,9 @@ header {
   &:focus {
     background-color: #ff6b01;
   }
+  &.current {
+    background-color: #ff6b01;
+  }
 }
 
 .studio-line {
@@ -180,8 +183,8 @@ header {
 }
 
 .logo__svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   align-self: center;
   stroke: #818181;
   transition-property: stroke;

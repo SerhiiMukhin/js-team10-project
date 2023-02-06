@@ -1,17 +1,30 @@
 // import * as basicLightbox from 'basiclightbox';
-import SearchMovieApi from './themoviedb-api-class';
 import { refs } from './get-refs';
+import { getLocalOne } from './add-local';
+import modal from '../templates/card_modal_film.hbs';
+import './search-movies';
 // import templatesModalCard from '../templates/';
 // import toWatched from './js/add-to-watched';
 // import toQueue from './js/add-to-queue';
 // import { spinerOn, spinerOff } from './spiner';
 
-const moviesApiService = new SearchMovieApi();
+// Открытие модалки с фильмом
 
-refs.movies.addEventListener('click', onMovieClick);
+const list = document.querySelector('.container');
 
-// Открыти модалки с фильмом
-function onMovieClick(event) {}
+list.addEventListener('click', onMovieClick);
+
+function onMovieClick(event) {
+  event.preventDefault();
+
+  if (!event.target.classList.contains('card__img')) return;
+
+  const id = +event.target.dataset.id;
+
+  modalCloseHandler();
+
+  refs.modalMovie.innerHTML = modal(getLocalOne(id));
+}
 
 // Обработка слушателей модального окна
 function modalCloseHandler() {
