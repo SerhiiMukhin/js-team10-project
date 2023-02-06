@@ -4,7 +4,13 @@ import { toQueue } from './add-to-queue';
 
 
 const backdrop = document.querySelector('.backdrop')
-const modalMovie = document.querySelector('.modal_img')
+
+
+const watchBtn = 'js-watched-modal';
+const queueBth = 'js-queue-modal';
+
+const reviewed = "reviewed";
+const yourTurn = 'in your turn';
 
 
 backdrop.addEventListener('click', onClick)
@@ -19,41 +25,44 @@ function onClick(e) {
 
     if(e.target.classList.contains('btn_watched')){
 
-        if(toQueue.getQueueAll() !== undefined && toQueue.getQueueOne(id).length > 0){
-            toQueue.removeQueueOneEl(id)
-            btn.btn_queue.classList.remove('js-queue')
-            btn.btn_queue.textContent = 'add to queue';
-        }
-
         if(!toWatched.getWatchedOne(id)|| toWatched.getWatchedOne(id).length < 1){
             toWatched.setWatchedOne(...getLocalOne(id))
-            btn.btn_watched.classList.add('js-watched')
-            btn.btn_watched.textContent = 'reviewed';
-            return 
+            toWatchAddCurrent(btn.btn_watched)
+
+            try{if(toQueue.getQueueAll() !== undefined && toQueue.getQueueOne(id).length > 0){
+                toQueue.removeQueueOneEl(id)
+                removeQueueCurent(btn.btn_queue)
+            }
+        }finally{
+            return }
+            
+        }else{
+            toWatched.removeWatchedOneEl(id)
+            removeWatchCurrent(btn.btn_watched)
         }
     }
 
     if(e.target.classList.contains('btn_queue')){
 
-        if(toWatched.getWatchedAll !== undefined && toWatched.getWatchedOne(id).length > 0){
-            toWatched.removeWatchedOneEl(id)
-            btn.btn_watched.classList.remove('js-watched')
-            btn.btn_watched.textContent = 'add to watched';
-        }
+        
 
         if(!toQueue.getQueueOne(id) || toQueue.getQueueOne(id).length < 1){
             toQueue.setQueueOne(...getLocalOne(id))
-            btn.btn_queue.classList.add('js-queue')
-            btn.btn_queue.textContent = 'in your turn';
-            return 
+            toQueueAddCurent(btn.btn_queue)
+
+            try{if(toWatched.getWatchedAll !== undefined && toWatched.getWatchedOne(id).length > 0){
+                toWatched.removeWatchedOneEl(id)
+                removeWatchCurrent(btn.btn_watched)
+            }
+        }finally{
+            return }
+        }else{
+            toQueue.removeQueueOneEl(id)
+            removeQueueCurent(btn.btn_queue)
         }
     }
     
 }
-
-
-
-
 
 
 
@@ -62,19 +71,38 @@ export function watchedCurrent(id){
         btn_watched: document.querySelector('.btn_watched'),
         btn_queue: document.querySelector('.btn_queue')
     }
-    if(toWatched.getWatchedOne(id) || toQueue.getQueueOne(id)){
-
+    if(toWatched.getWatchedOne(id)){
         if(toWatched.getWatchedOne(id).length > 0){
-            btn.btn_watched.classList.add('js-watched')
-            btn.btn_watched.textContent = 'reviewed';
+            toWatchAddCurrent(btn.btn_watched)
         }
     }
 
     if(toQueue.getQueueOne(id)){
         if(toQueue.getQueueOne(id).length > 0){
-            btn.btn_queue.classList.add('js-queue')
-            btn.btn_queue.textContent = 'in your turn';
+            toQueueAddCurent(btn.btn_queue)
         }
     }
+}
 
+
+
+
+function toWatchAddCurrent(btn) {
+    btn.classList.add(watchBtn)
+    btn.textContent = reviewed;
+}
+
+function toQueueAddCurent(btn){
+    btn.classList.add(queueBth)
+    btn.textContent = yourTurn;
+}
+
+function removeWatchCurrent(btn){
+    btn.classList.remove(watchBtn)
+    btn.textContent = 'add to watched';
+}
+
+function removeQueueCurent(btn){
+    btn.classList.remove(queueBth)
+    btn.textContent = 'add to queue';
 }
