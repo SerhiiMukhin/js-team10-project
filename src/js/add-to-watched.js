@@ -22,7 +22,7 @@ export const toWatched = {
 
     addMovie(movie, arr) {
         if (arr.every(e => e.id !== movie.id)) {
-            arr.push(movie);
+            arr.unshift(movie);
         }
         return arr;
     },
