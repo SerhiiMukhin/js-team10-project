@@ -5,7 +5,7 @@
   padding-top: 29px;
   padding-bottom: 39px;
 
-  background-color: #f7f7f7;
+  background-color: $button-bgc-and-footer;
 
   @media screen and (min-width: $tablet) {
     padding: 30px;
@@ -16,7 +16,7 @@
     margin-right: auto;
 
     text-align: center;
-    font-weight: 400;
+    font-weight: $secondary-font-weight;
     font-size: $secondary-font-size;
     line-height: 114.285714%; /* 16px/14px */
 
@@ -51,10 +51,10 @@
     margin-bottom: 10px;
   }
 
-  color: #545454;
+  color: $footer-text;
 }
 .modal-students {
-  color: #545454;
+  color: $footer-text;
 
   &__link {
     text-decoration: underline;
