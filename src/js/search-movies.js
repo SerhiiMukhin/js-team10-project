@@ -24,7 +24,7 @@ async function onSearch(evt) {
       return;
     }
 
-    const { page, results, total_pages, total_results } =
+    const { page, results, total_pages, total_results, } =
       await searchMovieApi.getMovieByName();
 
     if (total_results === 0) {
@@ -45,10 +45,10 @@ async function onSearch(evt) {
 // и прокидываем newArr в функцию hbs
 function createCardMarkup(arr) {
   let newArr = [];
-  arr.map(({ poster_path, title, release_date, genre_ids }) => {
+  arr.map(({ poster_path, title, release_date, genre_ids, id }) => {
     const filmGenres = getGenre(genre_ids).join(', ');
     const filmDate = release_date.slice(0, 4);
-    const obj = { poster_path, title, filmDate, filmGenres };
+    const obj = { poster_path, title, filmDate, filmGenres, id };
     newArr.push(obj);
   });
 
