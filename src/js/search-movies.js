@@ -3,7 +3,8 @@ ScrollTop.defineCustomElement(); //для боковой кнопки скрол
 
 import SearchMovieApi from './themoviedb-api-class';
 import filmCardTemplate from '../templates/card_film.hbs';
-import {addLocal} from './add-local'
+import { addLocal } from './add-local';
+import { spinerOff, spinerOn } from './spiner';
 
 const searchForm = document.querySelector('.js-search-form');
 const cardBox = document.querySelector('.js-card-collection');
@@ -15,6 +16,7 @@ getGenres(); // получаем жанры (нужно переделать ч�
 async function onSearch(evt) {
   evt.preventDefault();
   try {
+    spinerOn();
     searchMovieApi.resetPage();
     searchMovieApi.quary = searchForm.query.value.trim();
 
@@ -26,6 +28,7 @@ async function onSearch(evt) {
 
     const { page, results, total_pages, total_results } =
       await searchMovieApi.getMovieByName();
+    setTimeout(spinerOff, 500);
 
     if (total_results === 0) {
       resetMarkup();
@@ -37,6 +40,7 @@ async function onSearch(evt) {
     resetMarkup();
     createCardMarkup(results);
   } catch (error) {
+    // spinerOff();
     console.log(error.message);
   }
 }
