@@ -189,12 +189,12 @@ li {
 .header__library-logo-svg {
   width: 24px;
   height: 24px;
+  margin-right: 12px;
   align-self: center;
   stroke: #818181;
   transition-property: stroke;
   transition-duration: 0.25s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  margin-right: 12px;
 }
 
 .header__library-logo-text {
