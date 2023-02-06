@@ -36,15 +36,11 @@ li {
   width: 100%;
   padding: 45px 20px;
   height: 230px;
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-  color: #fff;
+  font-family: $primary-font-family;
+  font-weight: $primary-font-weight;
+  color: $primary-bgc;
   background-color: #2a2a2a;
-  background-image: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.56),
-      rgba(0, 0, 0, 0.56)
-    ),
+  background-image: linear-gradient(90deg, $header-bgc, $header-bgc),
     url(../images/bg-image-header-my-library-mobile-2x.jpg);
   background-position: top;
   background-repeat: no-repeat;
@@ -52,28 +48,20 @@ li {
 }
 
 .header__library {
-  background-color: #000;
-  background-image: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.56),
-      rgba(0, 0, 0, 0.56)
-    ),
+  background-color: $primary-text-color;
+  background-image: linear-gradient(90deg, $header-bgc, $header-bgc),
     url(../images/bg-image-header-my-library-desctop-1x.jpg);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)
-      ),
+    background-image: linear-gradient(to right, $header-bgc, $header-bgc),
       url(../images/bg-image-header-my-library-tablet-2x.jpg);
   }
 
-  @media screen and (min-width: 1280px) {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56)),
+  @media screen and (min-width: $desctop) {
+    background-image: linear-gradient(to right, $header-bgc),
       url(../images/bg-image-header-my-library-desctop-2x.jpg);
   }
 }
@@ -103,7 +91,7 @@ li {
     display: flex;
     gap: 16px;
 
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
+    @media screen and (min-width: $tablet) and (max-width: 1279px) {
       margin-right: 15px;
       gap: 32px;
     }
@@ -121,16 +109,16 @@ li {
 .button__library {
   display: inline-block;
   cursor: pointer;
-  font-size: 12px;
+  font-size: $primary-font-size;
   padding: 14px 36px 12px;
   min-width: 130px;
-  font-weight: 500;
+  font-weight: $primary-font-weight;
   line-height: 1.33333;
   text-align: center;
   text-transform: uppercase;
-  color: #fff;
+  color: $primary-bgc;
   background: transparent;
-  border: 1px solid #fff;
+  border: 1px solid $primary-bgc;
   border-radius: 5px;
 }
 .button__library {
@@ -139,11 +127,11 @@ li {
     padding: 14px 12px;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
+  @media screen and (min-width: $tablet) and (max-width: 1279px) {
     width: 152px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desctop) {
     width: 148px;
   }
   &:hover,
@@ -177,11 +165,11 @@ li {
     margin-right: auto;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
+  @media screen and (min-width: $tablet) and (max-width: 1279px) {
     margin-right: auto;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desctop) {
     margin-right: auto;
   }
 }
@@ -194,14 +182,14 @@ li {
   stroke: #818181;
   transition-property: stroke;
   transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: $timing-function;
 }
 
 .header__library-logo-text {
   font-size: 30px;
   line-height: 1.72;
-  font-weight: 500;
-  color: #fff;
+  font-weight: $primary-font-weight;
+  color: $primary-bgc;
 
   @media screen and (max-width: 767px) {
     display: none;
@@ -209,7 +197,7 @@ li {
 }
 
 .header__library-logo-svg {
-  @media screen and (min-width: 768px) and (max-width: 1280px) {
+  @media screen and (min-width: $tablet) and (max-width: $desctop) {
     margin-right: 10px;
   }
 }
@@ -226,8 +214,8 @@ li {
 }
 
 .menu__link {
-  font-size: 12px;
+  font-size: $primary-font-size;
   line-height: 1.16;
   text-transform: uppercase;
-  color: #fff;
+  color: $primary-bgc;
 }
