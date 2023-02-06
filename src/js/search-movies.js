@@ -1,3 +1,6 @@
+import { ScrollTop } from '../../node_modules/@georapbox/scroll-top-element/dist/scroll-top.js';
+ScrollTop.defineCustomElement(); //для боковой кнопки скрола наверх (Никита)
+
 import SearchMovieApi from './themoviedb-api-class';
 import filmCardTemplate from '../templates/card_film.hbs';
 import {addLocal} from './add-local'
