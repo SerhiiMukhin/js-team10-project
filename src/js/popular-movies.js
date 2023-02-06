@@ -1,6 +1,7 @@
 import cardFilm from '../templates/card_film.hbs';
 import SearchMovieApi from './themoviedb-api-class';
 import { spinerOff, spinerOn } from './spiner';
+import {addLocal} from './add-local';
 
 // const searchFormPage = document.querySelector('#search-form');
 const cardsContainer = document.getElementById('film-cards');

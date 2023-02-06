@@ -1,9 +1,9 @@
 {{#each this}}
-  <div class='modal_img'>
+  <div class='modal_img' data-id='{{id}}'>
     <a>
       <img
         class='img'
-        src="'https://image.tmdb.org/t/p/w500{{poster_path}}'"
+        src="https://image.tmdb.org/t/p/w500{{poster_path}}"
         alt='{{title}}'
       /></a>
   </div>
@@ -36,8 +36,8 @@
       <p class='information_txt'>{{overview}}</p>
     </div>
     <div class='modal_btn'>
-      <button class='btn_watched modal_btn-btn'>add to watched</button>
-      <button class='btn_queue modal_btn-btn'>add to queue</button>
+      <button class='btn_watched modal_btn-btn' data-id='{{id}}'>add to watched</button>
+      <button class='btn_queue modal_btn-btn' data-id='{{id}}'>add to queue</button>
     </div>
   </div>
 {{/each}}
