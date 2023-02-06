@@ -1,1 +1,285 @@
-// Стилі для модального вікна карток фільмів
+.backdrop {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  // background-color: rgb(0, 0, 0, 0.25);
+  background-color: blue;
+  top: 0;
+  left: 0;
+
+  @media screen and (min-width: $desctop) {
+    // background-color: transparent;
+    background-color: blue;
+  }
+}
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 20px;
+}
+.modal__card {
+  position: relative;
+  background-color: $primary-bgc;
+  color: $primary-text-color;
+  height: 90vh;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 48px 20px 40px 20px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    overflow-y: hidden;
+
+    height: 100%;
+    max-width: 704px;
+    padding-left: 36px;
+    padding-right: 72px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  @media screen and (min-width: $desctop) {
+    // flex-direction: row;
+    justify-content: flex-end;
+    max-width: 806px;
+
+    padding: 40px 12px;
+    box-shadow: none;
+  }
+}
+.modal__button--close {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+  padding: 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__button--close:hover,
+.modal__button--close:focus > .modal__icon--close {
+  fill: $accent-color;
+}
+.modal__icon--close {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_img {
+  max-width: 240px;
+  height: 357px;
+  @media screen and (min-width: $tablet) {
+    max-width: 264px;
+    height: 374px;
+    margin-right: 68px;
+  }
+
+  /* // desktop styles: */
+  @media screen and (min-width: $desctop) {
+    max-width: 375px;
+    height: 478px;
+    margin-right: 16px;
+  }
+}
+
+/* //ховає модалку */
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden.modal-content {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  // background-repeat: no-repeat;
+  // background-size: auto;
+  // background-size: contain;
+}
+.modal_container_info {
+  display: block;
+  max-width: 240px;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 264px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    max-width: 391px;
+  }
+}
+
+.modal_title {
+  font-family: $primary-font-family;
+  font-style: normal;
+  font-weight: $primary-font-weight;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  color: $primary-text-color;
+  margin-top: 20px;
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 0px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    font-size: 30px;
+    line-height: calc(35 / 30);
+    margin: 0 0 20px 0;
+  }
+}
+.modal_table {
+  font-family: $primary-font-family;
+  font-style: normal;
+  font-weight: $primary-font-weight;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  border: none;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 20px;
+  }
+}
+
+.table_info {
+  font-family: inherit;
+  color: $modal-text;
+  padding-right: 85px;
+}
+
+.table_styles {
+  font-family: inherit;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  color: $primary-text-color;
+  text-transform: capitalize;
+  @media screen and (min-width: 768px) {
+    line-height: calc(20 / 12);
+  }
+}
+.table_styles--title {
+  text-transform: uppercase;
+}
+.table_rating {
+  display: inline-block;
+
+  text-align: center;
+  text-transform: lowercase;
+  border-radius: 5px;
+  padding: 1px 9px;
+}
+.table_rating--vote {
+  color: white;
+  background-color: #ff6b01;
+}
+.table_rating--votes {
+  color: black;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.modal_information {
+  display: inline-block;
+  max-width: 240px;
+  max-height: 260px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 264px;
+    max-height: 260px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    max-width: 391px;
+    max-height: 184px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+  }
+}
+.information_title {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: $primary-font-weight;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  text-transform: uppercase;
+  margin: 0px;
+  margin-bottom: 8px;
+}
+.information_txt {
+  font-family: $primary-font-family;
+  font-style: normal;
+  font-weight: $primary-font-weight;
+  font-size: 12px;
+  line-height: calc(20 / 12);
+  margin: 0px;
+  padding-right: 5px;
+}
+
+/**
+  |============================
+  |  КНОПКИ В МОДАЛЬНОМУ ВІКНІ
+  |============================
+*/
+.modal_btn {
+  display: flex;
+  gap: 15px;
+  // flex-grow: 1;
+  align-items: center;
+  justify-content: start;
+
+  &-btn {
+    min-width: 110px;
+    height: 44px;
+    color: $primary-text-color;
+    background-color: transparent;
+    border: 1px solid #000000;
+
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: calc(16 / 12);
+    padding: 6px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @media screen and (min-width: $tablet) {
+      min-width: 125px;
+      // margin-right: 15px;
+    }
+    @media screen and (min-width: $desctop) {
+      min-width: 136px;
+      padding: 10px;
+    }
+
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: #ff6b01;
+      color: white;
+      border: none;
+    }
+  }
+}
