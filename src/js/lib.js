@@ -1,66 +1,59 @@
-import {toQueue} from './add-to-queue'
-import {toWatched} from './add-to-watched'
-import card from "../templates/card_film.hbs"
+import { toQueue } from './add-to-queue';
+import { toWatched } from './add-to-watched';
+import card from '../templates/card_library.hbs';
 // import {addLocal, getLocalOne} from './add-local'
 import { createLibraryPaginationWatched } from './pagination-library';
 import { createLibraryPaginationQueue } from './pagination-library-queue';
-import { spinerOff, spinerOn} from './spiner'
+import { spinerOff, spinerOn } from './spiner';
 import { addLocal } from './add-local';
 
+const list = document.querySelector('.library-section__card-set');
+const btnWatch = document.querySelector('.js-watch');
+const btnQueue = document.querySelector('.js-queue');
+const current = 'is-current';
 
-const list = document.querySelector('.library-section__card-set')
-const btnWatch = document.querySelector('.js-watch')
-const btnQueue = document.querySelector('.js-queue')
-const current = 'is-current'
+btnWatch.addEventListener('click', onWatch);
+btnQueue.addEventListener('click', onQueue);
 
-btnWatch.addEventListener('click', onWatch)
-btnQueue.addEventListener('click', onQueue)
+onQueue();
+spinerOn();
 
-    onQueue()
-    spinerOn()
-    
-    function onQueue() {
+function onQueue() {
+  createLibraryPaginationQueue();
+  addLocal(toQueue.getQueueAll());
 
-
-        createLibraryPaginationQueue()
-        addLocal(toQueue.getQueueAll())
-
-   if(!btnQueue.classList.contains(current)){
-    btnQueue.classList.add(current)
-    btnWatch.classList.remove(current)
-    return
-   }
-   btnQueue.classList.remove(current)
+  if (!btnQueue.classList.contains(current)) {
+    btnQueue.classList.add(current);
+    btnWatch.classList.remove(current);
+    return;
+  }
+  btnQueue.classList.remove(current);
 }
 
 function onWatch() {
+  createLibraryPaginationWatched();
 
-    createLibraryPaginationWatched()
+  addLocal(toWatched.getWatchedAll());
 
-    addLocal(toWatched.getWatchedAll())
-
-    if(!btnWatch.classList.contains(current)){
-        btnWatch.classList.add(current)
-    btnQueue.classList.remove(current)
-        return
-    }
-    btnWatch.classList.remove(current)
-
+  if (!btnWatch.classList.contains(current)) {
+    btnWatch.classList.add(current);
+    btnQueue.classList.remove(current);
+    return;
+  }
+  btnWatch.classList.remove(current);
 }
 
- export function renderCard(arr){
-     onload = () => spinerOff()
-    try{
-    if(arr.length > 0){
-       return list.innerHTML = card(arr)
-    }else{
-        return list.innerHTML ="🐷"
+export function renderCard(arr) {
+  onload = () => spinerOff();
+  try {
+    if (arr.length > 0) {
+      return (list.innerHTML = card(arr));
+    } else {
+      return (list.innerHTML = '🐷');
     }
-}catch{
-    return list.innerHTML ="🐷"
-}finally{
+  } catch {
+    return (list.innerHTML = '🐷');
+  } finally {
     window.scrollBy(0, -window.innerHeight * 3);
+  }
 }
-}
-
-

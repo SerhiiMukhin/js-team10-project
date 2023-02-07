@@ -1,7 +1,7 @@
 // import * as basicLightbox from 'basiclightbox';
 import { refs } from './get-refs';
 import { getLocalOne } from './add-local';
-import {watchedCurrent} from './modal-btn-lib'
+import { watchedCurrent } from './modal-btn-lib';
 import modal from '../templates/card_modal_film.hbs';
 
 // import { spinerOn, spinerOff } from './spiner';
@@ -15,14 +15,14 @@ list.addEventListener('click', onMovieClick);
 function onMovieClick(event) {
   event.preventDefault();
 
-  if (!event.target.classList.contains('card__img')) return;
+  if (!event.target.classList.contains('library-section__card-img')) return;
 
   const id = +event.target.dataset.id;
 
   modalCloseHandler();
-  
+
   refs.modalMovie.innerHTML = modal(getLocalOne(id));
-  watchedCurrent(id)
+  watchedCurrent(id);
 }
 
 // Обработка слушателей модального окна
