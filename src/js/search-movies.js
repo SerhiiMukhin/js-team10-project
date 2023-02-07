@@ -7,9 +7,12 @@ import { ScrollTop } from '../../node_modules/@georapbox/scroll-top-element/dist
 
 const searchForm = document.querySelector('.js-search-form');
 const cardBox = document.querySelector('.js-card-collection');
+const erorrNotify = document.querySelector('.js-error-notify');
 const searchMovieApi = new SearchMovieApi();
+
 searchForm.addEventListener('submit', onSearch);
 ScrollTop.defineCustomElement();
+erorrNotify.innerHTML = '';
 
 async function onSearch(evt) {
   evt.preventDefault();
@@ -19,18 +22,20 @@ async function onSearch(evt) {
     searchMovieApi.quary = searchForm.query.value.trim();
 
     if (!searchMovieApi.quary) {
-      console.log('Введите название фильма!');
-      resetMarkup();
+      erorrNotify.innerHTML = 'Search result not successful.';
+      setTimeout(resetErorrMarkup, 3000);
+      spinerOff();
       return;
     }
 
-    const { page, results, total_pages, total_results, } =
+    const { page, results, total_pages, total_results } =
       await searchMovieApi.getMovieByName();
     setTimeout(spinerOff, 500);
 
     if (total_results === 0) {
       resetMarkup();
-      console.log('Введите нормальный запрос!');
+      erorrNotify.innerHTML = 'Enter the correct movie name and try again.';
+      setTimeout(resetErorrMarkup, 3000);
       return;
     }
 
@@ -63,6 +68,10 @@ function createCardMarkup(arr) {
 
 function resetMarkup() {
   cardBox.innerHTML = '';
+}
+
+function resetErorrMarkup() {
+  erorrNotify.innerHTML = '';
 }
 
 // async function getGenresTest() {
