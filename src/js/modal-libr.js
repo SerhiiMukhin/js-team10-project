@@ -1,17 +1,14 @@
 // import * as basicLightbox from 'basiclightbox';
 import { refs } from './get-refs';
 import { getLocalOne } from './add-local';
-import {watchedCurrent} from './modal-btn-add-local'
+import {watchedCurrent} from './modal-btn-lib'
 import modal from '../templates/card_modal_film.hbs';
-import './search-movies';
-// import templatesModalCard from '../templates/';
-// import toWatched from './js/add-to-watched';
-// import toQueue from './js/add-to-queue';
+
 // import { spinerOn, spinerOff } from './spiner';
 
 // Открытие модалки с фильмом
 
-const list = document.querySelector('.container');
+const list = document.querySelector('.container-library');
 
 list.addEventListener('click', onMovieClick);
 

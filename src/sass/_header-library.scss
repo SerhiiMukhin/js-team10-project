@@ -100,7 +100,8 @@
     width: 148px;
   }
   &:hover,
-  &:focus {
+  &:focus,
+  &.is-current {
     background-color: #ff6b01;
   }
 }

@@ -4,6 +4,7 @@ import './js/add-to-watched';
 import './js/add-local';
 import './js/get-refs';
 import './js/spiner';
-// import './js/movie-modal'
+import './js/modal-libr'
+import './js/modal-btn-lib'
 import './js/pagination-library';
 import './js/pagination-library-queue';
