@@ -33,6 +33,6 @@ async function onSearch() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', onSearch);
+// document.addEventListener('DOMContentLoaded', onSearch);
 
 export { onSearch, createPopularMarkup };

@@ -3,18 +3,18 @@ import filmCardTemplate from '../templates/card_film.hbs';
 import { spinerOff, spinerOn } from './spiner';
 import { addLocal } from './add-local';
 import { getGenre } from './get-genres';
-import { ScrollTop } from '../../node_modules/@georapbox/scroll-top-element/dist/scroll-top.js'; //для боковой кнопки скрола наверх (Никита)
+import { ScrollTop } from '../../node_modules/@georapbox/scroll-top-element/dist/scroll-top.js';
 
 const searchForm = document.querySelector('.js-search-form');
 const cardBox = document.querySelector('.js-card-collection');
 const erorrNotify = document.querySelector('.js-error-notify');
 const searchMovieApi = new SearchMovieApi();
 
-searchForm.addEventListener('submit', onSearch);
+searchForm.addEventListener('submit', onSearchByName);
 ScrollTop.defineCustomElement();
 erorrNotify.innerHTML = '';
 
-async function onSearch(evt) {
+async function onSearchByName(evt) {
   evt.preventDefault();
   try {
     spinerOn();
@@ -33,7 +33,6 @@ async function onSearch(evt) {
     setTimeout(spinerOff, 500);
 
     if (total_results === 0) {
-      resetMarkup();
       erorrNotify.innerHTML = 'Enter the correct movie name and try again.';
       setTimeout(resetErorrMarkup, 3000);
       return;
@@ -71,7 +70,7 @@ function resetErorrMarkup() {
   erorrNotify.innerHTML = '';
 }
 
-export { createNewArr };
+export { createNewArr, onSearchByName };
 
 // async function getGenresTest() {
 //   try {
@@ -89,6 +88,7 @@ export { createNewArr };
 //     console.log(error.message);
 //   }
 // }
+
 
 // в createArrMarkup(arr) на базе results создаем новый массив newArr,
 // в котором id жанров превращаются в строку жанров, а дату обрезаем,
@@ -128,3 +128,4 @@ export { createNewArr };
 //   addLocal(newArr);
 //   return newArr;
 // }
+

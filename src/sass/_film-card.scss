@@ -37,13 +37,17 @@
 .card__img {
   height: 402px;
   border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
 
   @media screen and (min-width: $tablet) {
     height: 455px;
+    margin-bottom: 8px;
   }
 
   @media screen and (min-width: $desctop) {
     height: 574px;
+    margin-bottom: 12px;
   }
 }
 

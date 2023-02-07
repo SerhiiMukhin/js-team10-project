@@ -21,7 +21,7 @@
     top:5px;
     left: 20px;
   }
-  
+
   &:hover,
   &:focus {
     color: #000;
@@ -59,4 +59,16 @@
     z-index: 10;
 justify-content: center;
 
+
+} 
+
+.video-trailer{
+    max-width: 320px;
+    height: 240px;
+
+    @media screen and (min-width: 768px) {
+       max-width: 560px;
+       width: 560px;
+        height: 315px;
+      }
 }

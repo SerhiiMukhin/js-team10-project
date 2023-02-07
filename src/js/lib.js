@@ -7,27 +7,31 @@ import { createLibraryPaginationQueue } from './pagination-library-queue';
 import { spinerOff, spinerOn } from './spiner';
 import { addLocal } from './add-local';
 
-const list = document.querySelector('.library-section__card-set');
-const btnWatch = document.querySelector('.js-watch');
-const btnQueue = document.querySelector('.js-queue');
-const current = 'is-current';
+const list = document.querySelector('.library-section__card-set')
+const btnWatch = document.querySelector('.js-watch')
+const btnQueue = document.querySelector('.js-queue')
+const current = 'is-current'
 
-btnWatch.addEventListener('click', onWatch);
-btnQueue.addEventListener('click', onQueue);
+btnWatch.addEventListener('click', onWatch)
+btnQueue.addEventListener('click', onQueue)
 
-onQueue();
-spinerOn();
+    onQueue()
+    spinerOn()
+     onload = () => spinerOff()
 
-function onQueue() {
-  createLibraryPaginationQueue();
-  addLocal(toQueue.getQueueAll());
+    
+    function onQueue() {
 
-  if (!btnQueue.classList.contains(current)) {
-    btnQueue.classList.add(current);
-    btnWatch.classList.remove(current);
-    return;
-  }
-  btnQueue.classList.remove(current);
+
+        createLibraryPaginationQueue()
+        addLocal(toQueue.getQueueAll())
+
+   if(!btnQueue.classList.contains(current)){
+    btnQueue.classList.add(current)
+    btnWatch.classList.remove(current)
+    return
+   }
+   btnQueue.classList.remove(current)
 }
 
 function onWatch() {
@@ -42,14 +46,12 @@ function onWatch() {
   }
   btnWatch.classList.remove(current);
 }
-
-export function renderCard(arr) {
-  onload = () => spinerOff();
-  try {
-    if (arr.length > 0) {
-      return (list.innerHTML = card(arr));
-    } else {
-      return (list.innerHTML = '🐷');
+export function renderCard(arr){
+    try{
+    if(arr.length > 0){
+       return list.innerHTML = card(arr)
+    }else{
+        return list.innerHTML ="🐷"
     }
   } catch {
     return (list.innerHTML = '🐷');
