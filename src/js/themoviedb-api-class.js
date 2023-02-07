@@ -18,7 +18,7 @@ export default class SearchMovieApi {
   }
 
   async getPopularFilms() {
-    const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=${this.lang}`;
+    const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=${this.lang}&page=${this.page}`;
     const response = await axios.get(url);
     return response.data;
   }

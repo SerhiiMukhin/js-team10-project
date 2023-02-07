@@ -1,7 +1,7 @@
 // import * as basicLightbox from 'basiclightbox';
 import { refs } from './get-refs';
 import { getLocalOne } from './add-local';
-import {watchedCurrent} from './modal-btn-add-local'
+import { watchedCurrent } from './modal-btn-add-local';
 import modal from '../templates/card_modal_film.hbs';
 import './search-movies';
 // import templatesModalCard from '../templates/';
@@ -23,9 +23,9 @@ function onMovieClick(event) {
   const id = +event.target.dataset.id;
 
   modalCloseHandler();
-  
+
   refs.modalMovie.innerHTML = modal(getLocalOne(id));
-  watchedCurrent(id)
+  watchedCurrent(id);
 }
 
 // Обработка слушателей модального окна
