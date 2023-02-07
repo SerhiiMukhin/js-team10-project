@@ -18,10 +18,19 @@ async function getTrailerId(id) {
 
 async function trailerOn(e) {
     spinerOn();
-    const id = +document.querySelector('.card').dataset.id;
+    
+    let id = +document.querySelector('.modal_img').dataset.id
+    let key
 
     const res = await getTrailerId(id);
-    const key = await res[0].key;
+
+    const arr = res.filter(e => e.name === "Official Trailer")
+
+    if(arr.length > 0){
+        key = arr[0].key
+    }else{
+        key = res[0].key;
+    }
 
     trailer.innerHTML = trailerHBS(key);
     modalCloseHandler();
