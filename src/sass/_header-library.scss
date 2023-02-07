@@ -2,7 +2,7 @@
   display: block;
   margin: 0 auto;
   width: 100%;
-  padding: 45px 20px;
+  padding: 49px 20px 60px;
   height: 230px;
   font-family: $primary-font-family;
   font-weight: $primary-font-weight;
@@ -13,6 +13,10 @@
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+  
+  // @media screen and (min-width: $tablet){
+  //   padding: 45px 32px;
+  // }
 }
 
 .header__library {
