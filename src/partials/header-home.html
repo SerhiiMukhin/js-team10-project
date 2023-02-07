@@ -19,23 +19,19 @@
       </ul>
     </nav>
   </div>
-      <form class="search-form js-search-form" id="search-form-header">
-      <input
-        class="header-form__input search-form-input"
-        type="text"
-        placeholder="Movie search"
-        name="query"
-        autocomplete="off"
-      />
+  <form class="search-form js-search-form" id="search-form-header">
+    <input
+      class="header-form__input search-form-input"
+      type="text"
+      placeholder="Movie search"
+      name="query"
+      autocomplete="off"
+    />
     <button class="header-form__btn" type="submit" aria-label="Search">
-        <svg class="header-form__icon" width="12" height="12">
-          <use href="./images/icons.svg#icon-search-12x12"></use>
-        </svg>
-      </button>
-    </form>
-    <p class="header-form__error is-hidden">
-      Search result not successful. Enter the correct movie name and try again.
-    </p>
-   
-  </div>
+      <svg class="header-form__icon" width="12" height="12">
+        <use href="./images/icons.svg#icon-search-12x12"></use>
+      </svg>
+    </button>
+  </form>
+  <p class="header-form__error js-error-notify"></p>
 </header>
