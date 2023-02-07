@@ -5,6 +5,7 @@ import card from "../templates/card_film.hbs"
 import { createLibraryPaginationWatched } from './pagination-library';
 import { createLibraryPaginationQueue } from './pagination-library-queue';
 import { spinerOff, spinerOn} from './spiner'
+import { addLocal } from './add-local';
 
 
 const list = document.querySelector('.library-section__card-set')
@@ -20,7 +21,9 @@ btnQueue.addEventListener('click', onQueue)
     
     function onQueue() {
 
+
         createLibraryPaginationQueue()
+        addLocal(toQueue.getQueueAll())
 
    if(!btnQueue.classList.contains(current)){
     btnQueue.classList.add(current)
@@ -33,6 +36,8 @@ btnQueue.addEventListener('click', onQueue)
 function onWatch() {
 
     createLibraryPaginationWatched()
+
+    addLocal(toWatched.getWatchedAll())
 
     if(!btnWatch.classList.contains(current)){
         btnWatch.classList.add(current)
