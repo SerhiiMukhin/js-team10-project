@@ -18,6 +18,8 @@ btnQueue.addEventListener('click', onQueue)
 
     onQueue()
     spinerOn()
+    onload = () => spinerOff()
+
     
     function onQueue() {
 
@@ -49,7 +51,6 @@ function onWatch() {
 }
 
  export function renderCard(arr){
-     onload = () => spinerOff()
     try{
     if(arr.length > 0){
        return list.innerHTML = card(arr)
