@@ -1,12 +1,11 @@
-import {toQueue} from './add-to-queue'
-import {toWatched} from './add-to-watched'
-import card from "../templates/card_film.hbs"
+import { toQueue } from './add-to-queue';
+import { toWatched } from './add-to-watched';
+import card from '../templates/card_library.hbs';
 // import {addLocal, getLocalOne} from './add-local'
 import { createLibraryPaginationWatched } from './pagination-library';
 import { createLibraryPaginationQueue } from './pagination-library-queue';
-import { spinerOff, spinerOn} from './spiner'
+import { spinerOff, spinerOn } from './spiner';
 import { addLocal } from './add-local';
-
 
 const list = document.querySelector('.library-section__card-set')
 const btnWatch = document.querySelector('.js-watch')
@@ -18,7 +17,7 @@ btnQueue.addEventListener('click', onQueue)
 
     onQueue()
     spinerOn()
-    onload = () => spinerOff()
+     onload = () => spinerOff()
 
     
     function onQueue() {
@@ -36,32 +35,27 @@ btnQueue.addEventListener('click', onQueue)
 }
 
 function onWatch() {
+  createLibraryPaginationWatched();
 
-    createLibraryPaginationWatched()
+  addLocal(toWatched.getWatchedAll());
 
-    addLocal(toWatched.getWatchedAll())
-
-    if(!btnWatch.classList.contains(current)){
-        btnWatch.classList.add(current)
-    btnQueue.classList.remove(current)
-        return
-    }
-    btnWatch.classList.remove(current)
-
+  if (!btnWatch.classList.contains(current)) {
+    btnWatch.classList.add(current);
+    btnQueue.classList.remove(current);
+    return;
+  }
+  btnWatch.classList.remove(current);
 }
-
- export function renderCard(arr){
+export function renderCard(arr){
     try{
     if(arr.length > 0){
        return list.innerHTML = card(arr)
     }else{
         return list.innerHTML ="🐷"
     }
-}catch{
-    return list.innerHTML ="🐷"
-}finally{
+  } catch {
+    return (list.innerHTML = '🐷');
+  } finally {
     window.scrollBy(0, -window.innerHeight * 3);
+  }
 }
-}
-
-

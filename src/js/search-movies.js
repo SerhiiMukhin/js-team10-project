@@ -37,8 +37,8 @@ async function onSearchByName(evt) {
       setTimeout(resetErorrMarkup, 3000);
       return;
     }
-
-    addLocal(results);
+    // console.log(results);
+    // addLocal(results);
     resetMarkup();
     createCardMarkup(results);
   } catch (error) {
@@ -46,17 +46,14 @@ async function onSearchByName(evt) {
     console.log(error.message);
   }
 }
-// в createArrMarkup(arr) на базе results создаем новый массив newArr,
-// в котором id жанров превращаются в строку жанров, а дату обрезаем,
-// и прокидываем newArr в функцию hbs
+
 function createNewArr(arr) {
-  let newArr = [];
-  arr.map(({ poster_path, title, release_date, genre_ids, id }) => {
-    const filmGenres = getGenre(genre_ids).join(', ');
-    const filmDate = release_date.slice(0, 4);
-    const obj = { poster_path, title, filmDate, filmGenres, id };
-    newArr.push(obj);
+  const newArr = arr.map(el => {
+    el.genre_ids = getGenre(el.genre_ids).join(', ');
+    el.release_date = el.release_date.slice(0, 4);
+    return el;
   });
+  addLocal(newArr);
   return newArr;
 }
 
@@ -72,6 +69,8 @@ function resetMarkup() {
 function resetErorrMarkup() {
   erorrNotify.innerHTML = '';
 }
+
+export { createNewArr, onSearchByName };
 
 // async function getGenresTest() {
 //   try {
@@ -90,4 +89,43 @@ function resetErorrMarkup() {
 //   }
 // }
 
-export { createNewArr, onSearchByName };
+
+// в createArrMarkup(arr) на базе results создаем новый массив newArr,
+// в котором id жанров превращаются в строку жанров, а дату обрезаем,
+// и прокидываем newArr в функцию hbs
+// function createNewArr(arr) {
+//   let newArr = [];
+//   arr.map(
+//     ({
+//       poster_path,
+//       title,
+//       release_date,
+//       genre_ids,
+//       id,
+//       vote_average,
+//       vote_count,
+//       popularity,
+//       original_title,
+//       overview,
+//     }) => {
+//       const filmGenres = getGenre(genre_ids).join(', ');
+//       const filmDate = release_date.slice(0, 4);
+//       const obj = {
+//         poster_path,
+//         title,
+//         filmDate,
+//         filmGenres,
+//         id,
+//         vote_average,
+//         vote_count,
+//         popularity,
+//         original_title,
+//         overview,
+//       };
+//       newArr.push(obj);
+//     }
+//   );
+//   addLocal(newArr);
+//   return newArr;
+// }
+

@@ -14,6 +14,7 @@ const cardsContainer = document.getElementById('film-cards');
 // }
 
 function createPopularMarkup(arr) {
+  // addLocal(createNewArr(arr));
   cardsContainer.innerHTML = cardFilm(createNewArr(arr));
 }
 
@@ -26,7 +27,7 @@ async function onSearch() {
     setTimeout(spinerOff, 500);
     // console.log(response);
     createPopularMarkup(response.results);
-    addLocal(response.results); //добавляє в локалстор
+    // addLocal(response.results); //добавляє в локалстор
   } catch (error) {
     console.log(error.message);
   }
