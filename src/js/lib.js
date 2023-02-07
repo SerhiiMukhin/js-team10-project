@@ -44,6 +44,7 @@ function onWatch() {
 }
 
  export function renderCard(arr){
+     onload = () => spinerOff()
     try{
     if(arr.length > 0){
        return list.innerHTML = card(arr)
@@ -53,7 +54,6 @@ function onWatch() {
 }catch{
     return list.innerHTML ="🐷"
 }finally{
-    onload = () => spinerOff()
     window.scrollBy(0, -window.innerHeight * 3);
 }
 }
