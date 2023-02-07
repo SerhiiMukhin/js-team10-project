@@ -8,3 +8,4 @@ import './js/modal-libr'
 import './js/modal-btn-lib'
 import './js/pagination-library';
 import './js/pagination-library-queue';
+import './js/trailer';
