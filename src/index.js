@@ -3,6 +3,7 @@ import './js/get-genres';
 import './js/add-to-queue';
 import './js/add-to-watched';
 import './js/add-local';
+import './js/trailer';
 import './js/modal-btn-add-local';
 import './js/popular-movies';
 // import './js/api-key';
