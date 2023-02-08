@@ -3,7 +3,6 @@
   display: block;
   margin: 0 auto;
   width: 100%;
-  padding: 45px 20px;
   height: 230px;
   font-weight: $primary-font-weight;
   color: #fff;
@@ -15,6 +14,12 @@
 }
 
 .header__main {
+  padding: 44px 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 45px 32px;
+  }
+
   @media screen and (min-width: $tablet) and (max-width: 1279px) {
     background-image: linear-gradient(to right, $header-bgc, $header-bgc),
       url('../images/bg-image-header-home-tablet-2x.jpg');
@@ -99,7 +104,6 @@
 
   @media screen and (min-width: $tablet) {
     width: 336px;
-    margin-bottom: 20px;
   }
 
   @media screen and (min-width: $desctop) {
@@ -120,10 +124,11 @@
 }
 
 .header-form__error {
+  text-align: center;
   font-weight: $secondary-font-weight;
   font-size: $secondary-font-size;
   line-height: 1.14;
-  color: red;
+  color: rgba(255, 0, 27, 1);
 
   @media screen and (min-width: $tablet) {
     text-align: center;

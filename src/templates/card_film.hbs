@@ -1,24 +1,32 @@
 {{#each this}}
-<li class='card' data-id='{{id}}'>
+  <li class='card' data-id='{{id}}'>
     {{#if poster_path}}
 
-    <img
-      class='card__img'
-      src='https://image.tmdb.org/t/p/w500{{poster_path}}'
-      alt='{{title}}'
-      data-id='{{id}}'
-    />
+      <img
+        class='card__img'
+        src='https://image.tmdb.org/t/p/w500{{poster_path}}'
+        alt='{{title}}'
+        data-id='{{id}}'
+      />
     {{else}}
-        <img class='card__img' src='http://cdn.differencebetween.net/wp-content/uploads/2019/12/Difference-Between-Film-and-Movie--768x497.jpg' alt='{{title}}'  data-id='{{id}}'/>
-      {{/if}}
+      <img
+        class='card__img'
+        src='http://cdn.differencebetween.net/wp-content/uploads/2019/12/Difference-Between-Film-and-Movie--768x497.jpg'
+        alt='{{title}}'
+        data-id='{{id}}'
+      />
+    {{/if}}
     <h2 class='card__title'>{{title}}</h2>
-    
-  <div class="card__data">
-      {{#if filmGenres}}<span class='card__genres'>{{filmGenres}}</span>{{else}}<p class='card__undefined'>N/A</p>{{/if}}
-      
-      {{#if filmDate}}<span class='card__year'> | {{filmDate}}</span>{{else}}<p class='card__undefined'>| N/A</p>{{/if}}
-  </div>
 
+    <div class='card__data'>
+      {{#if genre_ids}}<span class='card__genres'>{{genre_ids}}</span>{{else}}<p
+          class='card__undefined'
+        >N/A</p>{{/if}}
+
+      {{#if release_date}}<span class='card__year'>
+          |
+          {{release_date}}</span>{{else}}<p class='card__undefined'>| N/A</p>{{/if}}
+    </div>
 
   </li>
 {{/each}}

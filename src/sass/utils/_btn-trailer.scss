@@ -21,7 +21,7 @@
     top:5px;
     left: 20px;
   }
-  
+
   &:hover,
   &:focus {
     color: #000;
@@ -39,7 +39,6 @@
     background: #00000041;
     visibility: visible;
     opacity: 1;
-    pointer-events: visible;
 
     &.js-hidden{
         opacity: 0;
@@ -59,4 +58,16 @@
     z-index: 10;
 justify-content: center;
 
+
+} 
+
+.video-trailer{
+    max-width: 320px;
+    height: 240px;
+
+    @media screen and (min-width: 768px) {
+       max-width: 560px;
+       width: 560px;
+        height: 315px;
+      }
 }
