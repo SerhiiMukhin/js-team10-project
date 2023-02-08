@@ -4,18 +4,18 @@ import { spinerOff, spinerOn } from './spiner';
 import { addLocal } from './add-local';
 import { getGenre } from './get-genres';
 import { ScrollTop } from '../../node_modules/@georapbox/scroll-top-element/dist/scroll-top.js';
+import { createSearchPagination } from './pagination-search';
 
 const searchForm = document.querySelector('.js-search-form');
 const cardBox = document.querySelector('.js-card-collection');
 const erorrNotify = document.querySelector('.js-error-notify');
 const searchMovieApi = new SearchMovieApi();
 
-searchForm.addEventListener('submit', onSearchByName);
+searchForm.addEventListener('submit', createSearchPagination);
 ScrollTop.defineCustomElement();
 erorrNotify.innerHTML = '';
 
-async function onSearchByName(evt) {
-  evt.preventDefault();
+async function onSearchByName(pages) {
   try {
     spinerOn();
     searchMovieApi.resetPage();
@@ -27,9 +27,10 @@ async function onSearchByName(evt) {
       spinerOff();
       return;
     }
-
+    searchMovieApi.page = pages;
     const { page, results, total_pages, total_results } =
       await searchMovieApi.getMovieByName();
+
     setTimeout(spinerOff, 500);
 
     if (total_results === 0) {

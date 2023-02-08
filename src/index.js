@@ -12,5 +12,7 @@ import './js/search-movies';
 import './js/movie-modal';
 import './js/spiner';
 import './js/themoviedb-api-class';
-import './js/pagination';
+// import './js/pagination';
 import './templates/card_film.hbs';
+import './js/pagination-popular';
+import './js/pagination-search';
