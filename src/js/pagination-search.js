@@ -20,8 +20,7 @@ export function createSearchPagination(evt) {
   const pagination = new Pagination(container, options);
 
   pagination.on('beforeMove', event => {
-    page = event.page;
-      onSearchByName(page);
+      onSearchByName(event.page);
   });
 
   pagination.movePageTo(0);
