@@ -2,6 +2,7 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.min.css';
 import { toWatched } from './add-to-watched';
 import { renderCard } from './lib';
+import { spinerOff, spinerOn } from './spiner';
 
 const watchedData = toWatched.getWatchedAll();
 

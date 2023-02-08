@@ -1,17 +1,14 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.min.css';
 import { onSearch } from './popular-movies.js';
-import SearchMovieApi from './themoviedb-api-class';
 
-const searchMovieApi = new SearchMovieApi();
 
-export async function createPopularPagination() {
-  const response = await searchMovieApi.getPopularFilms();
+export function createPopularPagination() {
 
   const container = document.querySelector('#pagination');
   const itemsPerPage = 20;
   const options = {
-    totalItems: response.total_results,
+    totalItems: 20000,
     itemsPerPage,
     visiblePages: 5,
     centerAlign: false,
