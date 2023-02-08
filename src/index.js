@@ -14,5 +14,6 @@ import './js/spiner';
 import './js/themoviedb-api-class';
 // import './js/pagination';
 import './templates/card_film.hbs';
+import './js/teamModal';
 import './js/pagination-popular';
 import './js/pagination-search';
