@@ -60,6 +60,10 @@
             max-width: 440px;
             height: 438px;
 
+            &:hover {
+                box-shadow: 10px 5px 5px $accent-color;
+              }
+
             @media screen and (min-width: 768px) {
                 width: 336px;
                 height: 495px;
