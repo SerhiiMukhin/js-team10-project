@@ -1,21 +1,20 @@
 {{#each this}}
   <li class='card' data-id='{{id}}'>
-    {{#if poster_path}}
-
-      <img
-        class='card__img'
-        src='https://image.tmdb.org/t/p/w500{{poster_path}}'
-        alt='{{title}}'
-        data-id='{{id}}'
-      />
-    {{else}}
+    {{#if_eq poster_path null}}
       <img
         class='card__img'
         src='http://cdn.differencebetween.net/wp-content/uploads/2019/12/Difference-Between-Film-and-Movie--768x497.jpg'
         alt='{{title}}'
         data-id='{{id}}'
       />
-    {{/if}}
+    {{else}}
+      <img
+        class='card__img'
+        src='https://image.tmdb.org/t/p/w500{{poster_path}}'
+        alt='{{title}}'
+        data-id='{{id}}'
+      />
+    {{/if_eq}}
     <h2 class='card__title'>{{title}}</h2>
 
     <div class='card__data'>
