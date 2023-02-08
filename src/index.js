@@ -14,3 +14,4 @@ import './js/spiner';
 import './js/themoviedb-api-class';
 import './js/pagination';
 import './templates/card_film.hbs';
+import './js/teamModal';
