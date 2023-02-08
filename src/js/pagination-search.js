@@ -32,4 +32,5 @@ export async function createSearchPagination(evt) {
   });
 
   pagination.movePageTo(0);
-}
+
+};

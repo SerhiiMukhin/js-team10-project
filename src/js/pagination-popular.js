@@ -24,4 +24,5 @@ export async function createPopularPagination() {
   });
 
   pagination.movePageTo(0);
+
 };
