@@ -1,70 +1,144 @@
 .pagination-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
 
-    @media screen and (min-width: 367px) and (max-width: 767px) {
-        padding: 40px 0;
-    }
+  @media screen and (min-width: 367px) and (max-width: 767px) {
+    padding: 40px 0;
+  }
 
-    @media screen and (min-width: 768px) {
-        padding: 50px 0 60px 0;
-    }
+  @media screen and (min-width: 768px) {
+    padding: 50px 0 60px 0;
+  }
 }
 
 .pagination-button:not(:last-child),
 .dots {
-    margin-right: 16px;
+  margin-right: 16px;
 }
 
 .pagination-button {
-    padding: 0;
-    background-color: white;
-    border: none;
-    color: black;
-    cursor: pointer;
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.333;
-    // width: 40px;
-    // height: 40px;
+  padding: 0;
+  background-color: white;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.333;
+  // width: 40px;
+  // height: 40px;
 }
 
 .pagination--current {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: green;
-    color: black;
-    font-size: 19px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: green;
+  color: black;
+  font-size: 19px;
 }
 
 .dots,
 .first-button,
 .last-button {
-    @media screen and (max-width: 767px) {
-        display: none;
-    }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
 
 .arrow-left,
 .arrow-right {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: orangered;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    stroke: wheat;
-    background-position: center;
-    background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: orangered;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  stroke: wheat;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .arrow-left {
-    background-image: url(../images/pagination/arrow-right.svg);
+  background-image: url(../images/pagination/arrow-right.svg);
 }
 
 .arrow-right {
-    background-image: url(../images/pagination/arrow-left.svg);
+  background-image: url(../images/pagination/arrow-left.svg);
+}
+
+div#pagination {
+  display: flex;
+  justify-content: center;
+
+  height: 40px;
+  // background-color: rgba($color: #b07e7e, $alpha: 0.25);
+
+  margin-bottom: 60px;
+  border: none;
+
+  & .tui-prev,
+  .tui-next {
+    background-color: #f7f7f7;
+  }
+
+  & .tui-first,
+  .tui-last {
+    display: none;
+  }
+
+  & .tui-prev, .tui-last {
+    margin-left: 10px;
+  }
+
+  & .tui-page-btn {
+    height: 40px;
+    width: 40px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+
+    border: none;
+    border-radius: 5px;
+
+    padding-top: 12px;
+
+    align-content: center;
+    justify-content: center;
+  }
+
+  & .tui-is-selected {
+    background-color: #ff6b08;
+
+  }
+
+  & .tui-ico-ellip {
+    margin-top: 0px;
+    vertical-align: middle
+  }
+
+  & .tui-ico-next {
+    background-image: none;
+  }
+
+  & .tui-ico-prev {
+    background-image: none;
+  }
+
+  & .tui-next {
+    background-image: url( '../images/pagination/arrow-right.svg' );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+}
+
+& .tui-prev {
+    background-image: url( '../images/pagination/arrow-left.svg' );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+}
 }
