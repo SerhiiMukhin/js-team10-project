@@ -59,6 +59,3 @@ export function renderCard(arr){
     window.scrollBy(0, -window.innerHeight * 3);
   }
 }
-
-
-
