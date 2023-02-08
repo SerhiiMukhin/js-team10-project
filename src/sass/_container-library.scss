@@ -3,7 +3,7 @@
 .container-library {
     // mobile styles:
     max-width: 320px;
-    min-height: 400px;
+    min-height: calc(100vh - 430px);
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
@@ -12,6 +12,7 @@
     // tablet styles:
     @media screen and (min-width: 768px) {
         max-width: 768px;
+    min-height: calc(100vh - 470px);
         padding-left: 32px;
         padding-right: 32px;
     }
@@ -19,7 +20,8 @@
     // desktop styles:
     @media screen and (min-width: 1280px) {
         max-width: 1280px;
-        min-height: 480px;
+    min-height: calc(100vh - 485px);
+
         padding-left: 32px;
         padding-right: 32px;
     }
@@ -54,19 +56,39 @@
 
         }
 
+        &__item{
+            max-width: 440px;
+            height: 438px;
+
+            @media screen and (min-width: 768px) {
+                width: 336px;
+                height: 495px;
+            }
+    
+            @media screen and (min-width: 1280px) {
+                width: 394px;
+                height: 634px;
+
+            }
+        }
+
     &__card-img {
         display: block;
-        width: 280px;
-        height: auto;
+        max-width: 440px;
+        height: 398px;
         
         margin-bottom: 8px;
 
         @media screen and (min-width: 768px) {
             width: 336px;
+            height: 445px;
+
         }
 
         @media screen and (min-width: 1280px) {
-            width: 394px;
+            width: 395px;
+            height: 574px;
+
         }
 
     }
@@ -83,6 +105,10 @@
         line-height: 16px;
         letter-spacing: calc(16 / 12);
         color: #000000;
+
+        text-overflow: ellipsis; 
+        overflow: hidden;
+        white-space: nowrap;
         
         @media screen and (min-width: 1280px) {
             font-size: 20px;
@@ -98,6 +124,9 @@
     
     &__card-genre {
         margin-right: 2px;
+        text-overflow: ellipsis; 
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     &__card-genredelimiter {
