@@ -34,19 +34,20 @@ export async function createSearchPagination(evt) {
       return;
     }
 
-  const container = document.querySelector('#pagination');
-  const itemsPerPage = 20;
-  const options = {
-    totalItems: total_results,
-    itemsPerPage,
-    visiblePages: 5,
-    centerAlign: true,
-  };
+    const container = document.querySelector('#pagination');
+    const itemsPerPage = 20;
+    const options = {
+      totalItems: total_results,
+      itemsPerPage,
+      visiblePages: 5,
+      centerAlign: true,
+    };
 
     const pagination = new Pagination(container, options);
 
     pagination.on('beforeMove', event => {
       onSearchByName(event.page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     pagination.movePageTo(0);

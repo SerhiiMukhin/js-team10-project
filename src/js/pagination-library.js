@@ -31,6 +31,7 @@ export function createLibraryPaginationWatched(items, renderFn, totalItems) {
 
   pagination.on('beforeMove', event => {
     renderCard(getPageFilms(items, itemsPerPage, event.page - 1));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   pagination.movePageTo(0);
