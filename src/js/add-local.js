@@ -1,7 +1,7 @@
 //addLocal(arr) додає і перезаписує , приймає масив обєктів
 //getLocalOne(id) віддає масив з 1 елемента , потрібно передати id елемента
 
-const KEY = 'data-carrent';
+const KEY = 'data-current';
 
 function addLocal(arr) {
   try {

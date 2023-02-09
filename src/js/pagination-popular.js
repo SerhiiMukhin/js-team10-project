@@ -2,9 +2,7 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.min.css';
 import { onSearch } from './popular-movies.js';
 
-
 export function createPopularPagination() {
-
   const container = document.querySelector('#pagination');
   const itemsPerPage = 20;
   const options = {
@@ -21,5 +19,4 @@ export function createPopularPagination() {
   });
 
   pagination.movePageTo(0);
-
-};
+}

@@ -8,8 +8,6 @@ const searchMovieApi = new SearchMovieApi();
 const searchForm = document.querySelector('.js-search-form');
 const erorrNotify = document.querySelector('.js-error-notify');
 
-
-
 export async function createSearchPagination(evt) {
   evt.preventDefault();
 
@@ -25,9 +23,9 @@ export async function createSearchPagination(evt) {
       return;
     }
 
-     const { page, results, total_pages, total_results } =
+    const { page, results, total_pages, total_results } =
       await searchMovieApi.getMovieByName();
-    
+
     setTimeout(spinerOff, 500);
 
     if (total_results === 0) {
@@ -45,46 +43,26 @@ export async function createSearchPagination(evt) {
     centerAlign: true,
   };
 
-  const pagination = new Pagination(container, options);
+    const pagination = new Pagination(container, options);
 
-  pagination.on('beforeMove', event => {
+    pagination.on('beforeMove', event => {
       onSearchByName(event.page);
-  });
+    });
 
-  pagination.movePageTo(0);
+    pagination.movePageTo(0);
   } catch (error) {
     spinerOff();
     console.log(error.message);
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.min.css';
 // import { onSearchByName, createNewArr } from './search-movies';
 
-
-
 // export function createSearchPagination(evt) {
 //   evt.preventDefault();
 
-  
 //   const container = document.querySelector('#pagination');
 //   const itemsPerPage = 20;
 //   const options = {

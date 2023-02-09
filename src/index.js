@@ -17,4 +17,4 @@ import './templates/card_film.hbs';
 import './js/teamModal';
 import './js/pagination-popular';
 import './js/pagination-search';
-import './js/handlebars-helper'
+import './js/handlebars-helper';
