@@ -20,11 +20,10 @@
     <div class='card__data'>
       {{#if genre_ids}}<span class='card__genres'>{{genre_ids}}</span>{{else}}<p
           class='card__undefined'
-        >N/A</p>{{/if}}
-
+        >N/A </p>{{/if}}
+      <span class='card__genredelimiter'>|</span>
       {{#if release_date}}<span class='card__year'>
-          |
-          {{release_date}}</span>{{else}}<p class='card__undefined'>| N/A</p>{{/if}}
+          {{release_date}}</span>{{else}}<p class='card__undefined'>N/A</p>{{/if}}
     </div>
 
   </li>

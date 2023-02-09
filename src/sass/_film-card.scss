@@ -64,7 +64,11 @@
 
 .card__data {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nowrap;
 }
 
 .card__title {
@@ -74,6 +78,10 @@
   text-transform: uppercase;
   text-align: left;
   color: $primary-text-color;
+
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nowrap;
 
   @media screen and (min-width: $desctop) {
     font-size: 20px;
@@ -88,10 +96,34 @@
   text-align: left;
   color: $accent-color;
 
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nowrap;
+
   @media screen and (min-width: $desctop) {
     font-size: 20px;
     line-height: 1.2;
   }
+}
+
+.card__genredelimiter{
+  margin-left: 5px;
+  margin-right: 5px;
+
+
+font-family: $primary-font-family;
+  font-size: $primary-font-size;
+  line-height: 1.33;
+  text-align: left;
+  color: $accent-color;
+
+  @media screen and (min-width: $desctop) {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-left: 8px;
+margin-right: 8px;
+  }
+
 }
 
 .card__year {
