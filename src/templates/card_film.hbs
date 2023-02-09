@@ -15,17 +15,16 @@
         data-id='{{id}}'
       />
     {{/if}}
-    <h2 class='card__title'>{{title}}</h2>
+    <div class='card__box-info'>
+      <h2 class='card__title'>{{title}}</h2>
+      <div class='card__data'>
+        {{#if genre_ids}}<span
+            class='card__genres'
+          >{{genre_ids}}</span>{{else}}<p class='card__undefined'>N/A</p>{{/if}}
 
-    <div class='card__data'>
-      {{#if genre_ids}}<span class='card__genres'>{{genre_ids}}</span>{{else}}<p
-          class='card__undefined'
-        >N/A</p>{{/if}}
-
-      {{#if release_date}}<span class='card__year'>
-          |
-          {{release_date}}</span>{{else}}<p class='card__undefined'>| N/A</p>{{/if}}
-    </div>
-
+        {{#if release_date}}<span class='card__year'>
+            |
+            {{release_date}}</span>{{else}}<p class='card__undefined'>| N/A</p>{{/if}}
+      </div></div>
   </li>
 {{/each}}
