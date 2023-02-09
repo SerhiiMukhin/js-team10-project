@@ -46,16 +46,19 @@ function onWatch() {
   }
   btnWatch.classList.remove(current);
 }
-export function renderCard(arr){
-    try{
+export function renderCard(arr) {
+  try {
     if(arr.length > 0){
        return list.innerHTML = card(arr)
-    }else{
-        return list.innerHTML ="🐷"
+    } else {
+      return list.innerHTML = '<p>Sorry, you have no movies added to your library. Go to the home page.</p>';
     }
   } catch {
     return (list.innerHTML = '🐷');
   } finally {
-    window.scrollBy(0, -window.innerHeight * 3);
+      window.scrollBy(0, -window.innerHeight * 3);
   }
 }
+
+
+
