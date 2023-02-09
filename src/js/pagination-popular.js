@@ -16,6 +16,7 @@ export function createPopularPagination() {
 
   pagination.on('beforeMove', event => {
     onSearch(event.page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   pagination.movePageTo(0);
