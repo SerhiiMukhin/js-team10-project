@@ -23,7 +23,7 @@ export function createLibraryPaginationWatched(items, renderFn, totalItems) {
     totalItems: totalItems || watchedData.length,
     itemsPerPage,
     visiblePages: 5,
-    centerAlign: false,
+    centerAlign: true,
   };
 
   const pagination = new Pagination(container, options);
