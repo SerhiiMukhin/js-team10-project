@@ -42,7 +42,7 @@ export async function createSearchPagination(evt) {
     totalItems: total_results,
     itemsPerPage,
     visiblePages: 5,
-    centerAlign: false,
+    centerAlign: true,
   };
 
   const pagination = new Pagination(container, options);
