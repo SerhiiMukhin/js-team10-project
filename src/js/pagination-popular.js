@@ -9,7 +9,7 @@ export function createPopularPagination() {
     totalItems: 20000,
     itemsPerPage,
     visiblePages: 5,
-    centerAlign: false,
+    centerAlign: true,
   };
 
   const pagination = new Pagination(container, options);

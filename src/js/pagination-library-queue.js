@@ -24,7 +24,7 @@ export function createLibraryPaginationQueue(items, renderFn, totalItems) {
     totalItems: totalItems || queueData.length,
     itemsPerPage,
     visiblePages: 5,
-    centerAlign: false,
+    centerAlign: true,
   };
 
   const pagination = new Pagination(container, options);

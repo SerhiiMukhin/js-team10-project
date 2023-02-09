@@ -34,14 +34,14 @@ export async function createSearchPagination(evt) {
       return;
     }
 
-    const container = document.querySelector('#pagination');
-    const itemsPerPage = 20;
-    const options = {
-      totalItems: total_results,
-      itemsPerPage,
-      visiblePages: 5,
-      centerAlign: false,
-    };
+  const container = document.querySelector('#pagination');
+  const itemsPerPage = 20;
+  const options = {
+    totalItems: total_results,
+    itemsPerPage,
+    visiblePages: 5,
+    centerAlign: true,
+  };
 
     const pagination = new Pagination(container, options);
 
