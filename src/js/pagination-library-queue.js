@@ -16,8 +16,9 @@ export function createLibraryPaginationQueue(items, renderFn, totalItems) {
   const container = document.querySelector('#pagination');
   const cardSetLibrary = document.querySelector('.library-section__card-set');
   const itemsPerPage = 10;
-  if (!queueData) { 
-    return cardSetLibrary.innerHTML = '<p>Sorry, you have no movies added to your library. Go to the home page.</p>';
+  if (!queueData) {
+    return (cardSetLibrary.innerHTML =
+      '<p>Sorry, you have no movies added to your library. Go to the home page.</p>');
   }
   const options = {
     totalItems: totalItems || queueData.length,
@@ -34,9 +35,6 @@ export function createLibraryPaginationQueue(items, renderFn, totalItems) {
 
   pagination.movePageTo(0);
 }
-
-
-
 
 // import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.min.css';

@@ -16,7 +16,6 @@ ScrollTop.defineCustomElement();
 erorrNotify.innerHTML = '';
 
 async function onSearchByName(pages) {
-
   try {
     spinerOn();
     searchMovieApi.resetPage();
@@ -73,18 +72,6 @@ function resetErorrMarkup() {
 
 export { createNewArr, onSearchByName };
 
-
-
-
-
-
-
-
-
-
-
-
-
 // async function getGenresTest() {
 //   try {
 //     let obj = { genr: 1 };
@@ -101,7 +88,6 @@ export { createNewArr, onSearchByName };
 //     console.log(error.message);
 //   }
 // }
-
 
 // в createArrMarkup(arr) на базе results создаем новый массив newArr,
 // в котором id жанров превращаются в строку жанров, а дату обрезаем,
@@ -141,13 +127,6 @@ export { createNewArr, onSearchByName };
 //   addLocal(newArr);
 //   return newArr;
 // }
-
-
-
-
-
-
-
 
 // import SearchMovieApi from './themoviedb-api-class';
 // import filmCardTemplate from '../templates/card_film.hbs';
@@ -223,19 +202,3 @@ export { createNewArr, onSearchByName };
 // }
 
 // export { createNewArr, onSearchByName };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
