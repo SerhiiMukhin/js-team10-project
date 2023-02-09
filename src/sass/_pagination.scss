@@ -79,6 +79,12 @@ div#pagination {
   margin-bottom: 60px;
   border: none;
 
+  @media screen and (max-width: 767px) {
+    width: 280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   & .tui-prev,
   .tui-next {
     background-color: #f7f7f7;
@@ -146,10 +152,10 @@ div#pagination {
     background-size: 16px 16px;
 }
 
-& .tui-first-child, .tui-last-child {
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
-}
+// & .tui-first-child, .tui-last-child {
+//     @media screen and (max-width: 768px) {
+//         display: none;
+//     }
+// }
 
 }
