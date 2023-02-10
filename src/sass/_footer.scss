@@ -57,7 +57,15 @@
   color: $footer-text;
 
   &__link {
+    color: $footer-text;
     text-decoration: underline;
+    
+    transition: color $time-duration $timing-function;
+    
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
   }
 }
 .footer-icon {

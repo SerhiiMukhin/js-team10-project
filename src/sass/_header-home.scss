@@ -5,7 +5,7 @@
   width: 100%;
   height: 230px;
   font-weight: $primary-font-weight;
-  color: #fff;
+  color: $primary-bgc;
   background-image: linear-gradient(to right, $header-bgc, $header-bgc),
     url('../images/bg-image-header-home-mobile-2x.jpg');
   background-position: 50%;
@@ -36,6 +36,18 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 37px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 767px) {
+    max-width: $mobile;
+  }
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+  }
+  @media screen and (min-width: $desctop) {
+    max-width: $desctop;
+  }
 }
 
 .home-line {
@@ -55,7 +67,6 @@
   display: flex;
   gap: 39px;
 }
-
 .home__item {
   position: relative;
 }
@@ -63,8 +74,16 @@
 .home__link {
   font-size: $primary-font-size;
   line-height: 1.16;
-  color: #fff;
+  color: $primary-bgc;
   text-transform: uppercase;
+  padding: 5px;
+
+  transition: color $time-duration $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 
 // =============FORM============//
@@ -93,7 +112,7 @@
   font-weight: $secondary-font-weight;
   font-size: $secondary-font-size;
   line-height: 1.14;
-  color: white;
+  color: $primary-bgc;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgb(207, 195, 195);
@@ -111,7 +130,7 @@
   }
 
   &::placeholder {
-    color: white;
+    color: $primary-bgc;
   }
 }
 
