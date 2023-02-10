@@ -27,7 +27,6 @@
   box-shadow $time-duration $timing-function;
 
   &:hover {
-    // box-shadow: 10px 5px 5px $accent-color;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
       -23px 0 20px -23px rgba(0, 0, 0, 0.8),
       23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -59,9 +58,18 @@
   }
 }
 
+.card__box-info {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .card__data {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .card__title {
@@ -71,6 +79,10 @@
   text-transform: uppercase;
   text-align: left;
   color: $primary-text-color;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 
   @media screen and (min-width: $desctop) {
     font-size: 20px;
@@ -85,6 +97,10 @@
   text-align: left;
   color: $accent-color;
 
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
   @media screen and (min-width: $desctop) {
     font-size: 20px;
     line-height: 1.2;
@@ -97,6 +113,11 @@
   line-height: 1.33;
   text-align: left;
   color: $accent-color;
+  padding-left: 5px;
+
+  // text-overflow: ellipsis;
+  // overflow: hidden;
+  // white-space: nowrap;
 
   @media screen and (min-width: $desctop) {
     font-size: 20px;
