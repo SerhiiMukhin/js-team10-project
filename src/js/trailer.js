@@ -1,20 +1,14 @@
 import axios from 'axios';
 import trailerHBS from '../templates/trailer.hbs';
 import { spinerOff, spinerOn } from './spiner';
+import SearchMovieApi from "./themoviedb-api-class"
 
-const BASE_URL = 'https://api.themoviedb.org/3/';
-const API_KEY = 'a59dfea75e9e40e203f0819879862061';
+const newSearchMovieApi = new SearchMovieApi();
 
 const btnTrailer = document.querySelector('.btn-trailer');
 const trailer = document.querySelector('.trailer');
 
 btnTrailer.addEventListener('click', trailerOn);
-
-async function getTrailerId(id) {
-  const url = `${BASE_URL}movie/${id}/videos?api_key=${API_KEY}`;
-  const response = await axios.get(url);
-  return response.data.results;
-}
 
 async function trailerOn(e) {
   spinerOn();
@@ -22,7 +16,7 @@ async function trailerOn(e) {
   let id = +document.querySelector('.modal_img').dataset.id;
   let key;
 
-  const res = await getTrailerId(id);
+  const res = await newSearchMovieApi.getTrailerId(id);
 
   const arr = res.filter(e => e.name === 'Official Trailer');
 

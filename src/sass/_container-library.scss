@@ -1,5 +1,7 @@
 // Стилі для контейнера бібліотеки
 
+// Стилі для контейнера бібліотеки
+
 .container-library {
   // mobile styles:
   max-width: $mobile;
@@ -36,6 +38,11 @@
     padding-bottom: 60px;
   }
 
+  &__card-info {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
   &__card-set {
     display: flex;
     flex-direction: column;
@@ -58,10 +65,14 @@
   &__item {
     width: 280px;
     height: 438px;
-    transition: box-shadow $time-duration $timing-function;
+    transition: box-shadow $time-duration $timing-function,
+      transform $time-duration $timing-function;
 
     &:hover {
-      box-shadow: 10px 5px 5px $accent-color;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+        -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+        23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      transform: scale(1.03);
     }
 
     @media screen and (min-width: $tablet) {
@@ -79,7 +90,7 @@
     display: block;
     width: 100%;
     height: 398px;
-
+    border-radius: 5px;
     margin-bottom: 8px;
 
     @media screen and (min-width: $tablet) {
@@ -102,7 +113,6 @@
     font-size: $primary-font-size;
     line-height: 133.333333%; /* 16px/12px */
     color: $primary-text-color;
-
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -135,7 +145,7 @@
   &__card-genre,
   &__card-genredelimiter,
   &__card-year {
-    color: $accent-color
+    color: $accent-color;
   }
 
   &__card-rating {
