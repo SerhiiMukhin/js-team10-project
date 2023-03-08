@@ -1,7 +1,3 @@
-:root {
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-duration: 250ms;
-}
 
 .card_collection {
   padding-top: 20px;
@@ -27,7 +23,8 @@
   width: 280px;
   cursor: pointer;
 
-  transition: transform var(--animation-duration) var(--timing-function);
+  transition: transform $time-duration $timing-function,
+  box-shadow $time-duration $timing-function;
 
   &:hover {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),

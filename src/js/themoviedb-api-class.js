@@ -35,6 +35,12 @@ export default class SearchMovieApi {
     return response.data;
   }
 
+  async getTrailerId(id) {
+    const url = `${BASE_URL}movie/${id}/videos?api_key=${API_KEY}`;
+    const response = await axios.get(url);
+    return response.data.results;
+  }
+  
   incrementPage() {
     this.page += 1;
   }

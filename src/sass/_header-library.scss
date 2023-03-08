@@ -6,21 +6,21 @@
   height: 230px;
   font-family: $primary-font-family;
   font-weight: $primary-font-weight;
-  color: $primary-bgc;
+  color: #ffffff;
   background-color: #2a2a2a;
   background-image: linear-gradient(90deg, $header-bgc, $header-bgc),
     url(../images/bg-image-header-my-library-mobile-2x.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   // @media screen and (min-width: $tablet){
   //   padding: 45px 32px;
   // }
 }
 
 .header__library {
-  background-color: $primary-text-color;
+  background-color: #000000;
   background-image: linear-gradient(90deg, $header-bgc, $header-bgc),
     url(../images/bg-image-header-my-library-desctop-1x.jpg);
   background-position: 50%;
@@ -85,12 +85,14 @@
   line-height: 1.33333;
   text-align: center;
   text-transform: uppercase;
-  color: $primary-bgc;
+  color: #ffffff;
   background: transparent;
   border: 1px solid $primary-bgc;
   border-radius: 5px;
 }
 .button__library {
+  transition: background-color $time-duration $timing-function;
+
   @media screen and (max-width: 767px) {
     width: 130px;
     padding: 14px 12px;
@@ -103,6 +105,7 @@
   @media screen and (min-width: $desctop) {
     width: 148px;
   }
+
   &:hover,
   &:focus,
   &.is-current {
@@ -153,8 +156,13 @@
   font-size: 30px;
   line-height: 1.72;
   font-weight: $primary-font-weight;
-  color: $primary-bgc;
+  color: #ffffff;
 
+  transition: color $time-duration $timing-function;
+
+  .header__library-logo:hover & {
+    color: $accent-color;
+  }
   @media screen and (max-width: 767px) {
     display: none;
   }
@@ -178,5 +186,5 @@
   font-size: $primary-font-size;
   line-height: 1.16;
   text-transform: uppercase;
-  color: $primary-bgc;
+  color: #ffffff;
 }

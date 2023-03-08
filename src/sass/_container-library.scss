@@ -1,8 +1,10 @@
 // Стилі для контейнера бібліотеки
 
+// Стилі для контейнера бібліотеки
+
 .container-library {
   // mobile styles:
-  max-width: 320px;
+  max-width: $mobile;
   min-height: calc(100vh - 430px);
   padding-left: 20px;
   padding-right: 20px;
@@ -10,16 +12,16 @@
   margin-right: auto;
 
   // tablet styles:
-  @media screen and (min-width: 768px) {
-    max-width: 768px;
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
     min-height: calc(100vh - 470px);
     padding-left: 32px;
     padding-right: 32px;
   }
 
   // desktop styles:
-  @media screen and (min-width: 1280px) {
-    max-width: 1280px;
+  @media screen and (min-width: $desctop) {
+    max-width: $desctop;
     min-height: calc(100vh - 485px);
 
     padding-left: 32px;
@@ -31,7 +33,7 @@
   padding-top: 20px;
   padding-bottom: 40px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding-top: 60px;
     padding-bottom: 60px;
   }
@@ -47,14 +49,14 @@
     gap: 20px;
     align-items: center;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       flex-direction: row;
       gap: 32px;
       flex-wrap: wrap;
       justify-content: center;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desctop) {
       row-gap: 32px;
       column-gap: 16px;
     }
@@ -63,8 +65,9 @@
   &__item {
     width: 280px;
     height: 438px;
+    transition: box-shadow $time-duration $timing-function,
+      transform $time-duration $timing-function;
 
-    transition: transform var(--animation-duration) var(--timing-function);
     &:hover {
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
         -23px 0 20px -23px rgba(0, 0, 0, 0.8),
@@ -72,17 +75,17 @@
       transform: scale(1.03);
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       width: 336px;
       height: 495px;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desctop) {
       width: 394px;
       height: 634px;
     }
   }
-
+  
   &__card-img {
     display: block;
     width: 100%;
@@ -90,11 +93,11 @@
     border-radius: 5px;
     margin-bottom: 8px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       height: 445px;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desctop) {
       height: 574px;
     }
   }
@@ -106,20 +109,17 @@
   &__card-title,
   &__card-description {
     font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: calc(16 / 12);
-    color: #000000;
-
+    font-weight: $primary-font-weight;
+    font-size: $primary-font-size;
+    line-height: 133.333333%; /* 16px/12px */
+    color: $primary-text-color;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desctop) {
       font-size: 20px;
-      line-height: 24px;
-      letter-spacing: calc(24 / 20);
+      line-height: 120%; /* 24px/20px */
     }
   }
 
@@ -145,7 +145,7 @@
   &__card-genre,
   &__card-genredelimiter,
   &__card-year {
-    color: #ff6b08;
+    color: $accent-color;
   }
 
   &__card-rating {
@@ -154,18 +154,17 @@
     justify-content: center;
     text-transform: uppercase;
 
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: calc(14 / 12);
+    font-size: $primary-font-size;
+    line-height: 116.666667%; /* 14px/12px */
     color: #ffffff;
 
     width: 36px;
     height: 16px;
 
-    background: #ff6b01;
+    background: $accent-color;
     border-radius: 5px;
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desctop) {
       width: 40px;
       height: 20px;
     }

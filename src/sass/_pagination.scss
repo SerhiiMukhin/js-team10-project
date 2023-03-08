@@ -87,7 +87,7 @@ div#pagination {
 
   & .tui-prev,
   .tui-next {
-    background-color: #f7f7f7;
+    background-color: $button-bgc-and-footer;
   }
 
   & .tui-first,
@@ -107,9 +107,9 @@ div#pagination {
     height: 40px;
     width: 40px;
 
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
+    font-size: $primary-font-size;
+    font-weight: $primary-font-weight;
+    line-height: 133.333333%; /* 16px/12px */
 
     border: none;
     border-radius: 5px;
@@ -121,8 +121,7 @@ div#pagination {
   }
 
   & .tui-is-selected {
-    background-color: #ff6b08;
-
+    background-color: $accent-color;
   }
 
   & .tui-ico-ellip {
